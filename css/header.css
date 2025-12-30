@@ -6,15 +6,18 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    background-color: var(--white);
 }
 
 .header__container{
     max-width: 1440px;
     width: 100%;
+    padding: 0 20px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .header__logo-container{
@@ -29,7 +32,7 @@
 
 .header__title{
     color: var(--dark);
-    font-family: var(--font--display);
+    font-family: var(--font-display);
 }
 
 .header__title--orange{
@@ -41,6 +44,7 @@
     list-style-type: none;
     width: 400px;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .menu__item{
@@ -83,6 +87,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     transition: 0.3s;
+    font-family: var(--font-body);
 }
 
 .header__button button:hover{
