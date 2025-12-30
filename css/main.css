@@ -92,7 +92,6 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
 }
@@ -197,7 +196,7 @@
 
 .projects__buttons{
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .projects__list{
