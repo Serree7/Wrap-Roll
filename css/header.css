@@ -1,0 +1,110 @@
+.header{
+    width: 100%;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header__container{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image__logo{
+    width: 100px;
+}
+
+.header__title{
+    color: var(--dark);
+    font-family: var(--font--display);
+}
+
+.header__title--orange{
+    color: var(--primary);
+}
+
+.menu{
+    display: flex;
+    list-style-type: none;
+    width: 400px;
+    justify-content: space-around;
+}
+
+.menu__item{
+    width: 100px;
+}
+
+.menu__item a{
+    text-decoration: none;
+    display: block;
+    color: var(--dark);
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+    font-size: 1.2rem;
+}
+
+.menu__item a:hover{
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.nav__actions{
+    display: flex;
+}
+
+.header__button{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+.header__button button{
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.header__button button:hover{
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.nav__burger {
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;   
+}
+
+.nav__burger i {
+    color: var(--dark);
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.nav__burger i:hover{
+    color: var(--primary);
+}
