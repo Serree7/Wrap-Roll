@@ -73,6 +73,7 @@ aside {
     color: white;
     box-shadow: 0 8px 25px rgba(255, 140, 66, 0.4);
     height: fit-content;
+    animation: floating 3s ease-in-out infinite;
 }
 aside h3 {
     font-size: 26px;
@@ -323,4 +324,16 @@ article:hover {
 .faq-item h3 {
     font-size: 18px;
     font-weight: 500;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px); /* Sube 15 píxeles */
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
