@@ -360,7 +360,7 @@ article:hover {
     }
 }
 
-/* --- BREAKPOINT 1: Laptops (Hasta 1440px) --- */
+/* --- BREAKPOINT 1--- */
 @media (max-width: 1440px) {
     .container {
         padding: 0 40px;
@@ -370,7 +370,7 @@ article:hover {
     }
 }
 
-/* --- BREAKPOINT 2: Tablet/Medio (1024px - 769px) --- */
+/* --- BREAKPOINT 2 --- */
 /* El Aside se mueve al centro y el diseño pasa a 2 columnas */
 @media (max-width: 1024px) and (min-width: 769px) {
     .grid-container {
@@ -391,7 +391,7 @@ article:hover {
     }
 }
 
-/* --- BREAKPOINT 3: Móvil Horizontal/Bajo (768px - 481px) --- */
+/* --- BREAKPOINT 3 --- */
 /* El Aside desaparece y todo a 1 columna */
 @media (max-width: 768px) {
     aside {
@@ -418,7 +418,7 @@ article:hover {
     }
 }
 
-/* --- BREAKPOINT 4: Móvil Vertical (480px o menos) --- */
+/* --- BREAKPOINT 4--- */
 @media (max-width: 480px) {
     .container { 
         padding: 0 20px; 
