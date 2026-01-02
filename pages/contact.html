@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
@@ -40,9 +40,103 @@
             
         </div>
     </header>
-    <main>
-        
-    </main>
+<main class="main-wrapper">
+    <div class="content-container">
+        <section class="hero">
+            <div class="icon-circle"><i class="fa-solid fa-palette"></i></div>
+            <h1>Comienza tu <span>Transformación</span></h1>
+            <p>¿Listo para destacar? Rotulamos tu food truck. Rellena el formulario o contáctanos directamente.</p>
+            <div class="contact-buttons">
+                <button class="btn-outline"><i class="fa-solid fa-phone"></i>Llamar</button>
+                <button class="btn-outline"><i class="fa-regular fa-envelope"></i>Email</button>
+                <button class="btn-outline"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
+            </div>
+
+            <div class="steps">
+                <div class="step"><i class="fa-solid fa-file-pen"></i><span>1. PRESUPUESTO</span></div>
+                <div class="step"><i class="fa-solid fa-paintbrush"></i><span>2. DISEÑO</span></div>
+                <div class="step"><i class="fa-regular fa-truck"></i><span>3. ROTULACIÓN</span></div>
+            </div>
+        </section>
+
+        <section class="quote-form">
+            <div class="card">
+                <h2><i class="fa-solid fa-file-invoice-dollar"></i>Solicitar Presupuesto</h2>
+                <form>
+                    <div class="input-group">
+                        <label>NOMBRE COMPLETO</label>
+                        <input type="text" placeholder="Juan Pérez">
+                    </div>
+                    <div class="input-group">
+                        <label>CORREO ELECTRÓNICO</label>
+                        <input type="email" placeholder="tu@empresa.com">
+                    </div>
+                    <div class="input-group">
+                        <label>TIPO DE VEHÍCULO</label>
+                        <select>
+                            <option>Food Truck (Estándar)</option>
+                            <option>Remolque</option>
+                            <option>Furgoneta</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>DETALLES DEL PROYECTO</label>
+                        <textarea placeholder="Cuéntanos tu idea, colores, marca..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Obtener Presupuesto Gratis</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <h3 class="section-title">Opiniones Recientes</h3>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Trabajo increíble en nuestro camión de tacos. Los colores son vibrantes y la instalación fue muy rápida."</p>
+                <div class="user-info">
+                    <span class="avatar">TR</span>
+                    <span><strong>Tacos El Rey</strong></span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Equipo muy profesional. Gestionaron el diseño desde cero y el resultado es sencillamente espectacular."</p>
+                <div class="user-info">
+                    <span class="avatar" style="background: #e2e8f0; color: #64748b;">BB</span>
+                    <span><strong>Burger Bros</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h3 class="section-title">Preguntas Frecuentes</h3>
+            <div class="faq-item">¿Cuánto cuesta una rotulación completa? <span>▼</span></div>
+            <div class="faq-item">¿Ofrecen servicios de diseño? <span>▼</span></div>
+            <div class="faq-item">¿Cuánto tiempo dura el vinilo? <span>▼</span></div>
+        </section>
+
+        <section class="workshop">
+    <div class="map-area">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.563773033621!2d-4.841549423467468!3d39.92878478453472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3f1c717cef78c9%3A0xe80e353d605fae33!2sI.E.S.%20Ribera%20del%20Tajo!5e0!3m2!1ses!2ses!4v1704203000000!5m2!1ses!2ses" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="workshop-details">
+        <div class="detail-box">
+            <h4><i class="fa-solid fa-location-dot"></i> Visita nuestro Taller</h4>
+            <p>Av. Real Fábrica de Sedas s/n<br>Talavera de la Reina 45600, Toledo</p>
+        </div>
+        <div class="detail-box">
+            <h4><i class="fa-regular fa-clock"></i> Horario de Apertura</h4>
+            <p>Lun - Vie: 9:00 AM - 6:00 PM<br>Sáb: 10:00 AM - 2:00 PM</p>
+        </div>
+    </div>
+</section>
+    </div>
+</main>
     <footer class="footer">
         <div class="container-footer">
             <div class="footer__grid">
@@ -76,8 +170,8 @@
                 <div class="footer__col">
                     <h4 class="footer__title">Contacto</h4>
                     <ul class="footer__contact-info">
-                        <li><i class="fa-solid fa-location-dot"></i> Calle Falsa 123 Talavera de la Reina</li>
-                        <li><i class="fa-solid fa-phone"></i> +34 123 456 789</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Av. Real Fábrica de Sedas, s/n, 45600 Talavera de la Reina, Toledo</li>
+                        <li><i class="fa-solid fa-phone"></i> +34 925 722 233</li>
                         <li><i class="fa-solid fa-envelope"></i> info@wraproll.es</li>
                     </ul>
                 </div>

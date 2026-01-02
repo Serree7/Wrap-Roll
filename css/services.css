@@ -29,7 +29,7 @@
     max-width: 800px; 
     text-align: center;
     margin: 0 auto; 
-    color: white;
+    color: var(--white);
 }
 
 .hero-tag {
@@ -37,7 +37,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #ff8c42;
+    color: var(--primary);
     margin-bottom: 15px;
     display: block;
 }
@@ -73,7 +73,7 @@
 /* Intro Section - Ocupa 2 columnas */
 .intro-section {
     grid-area: intro;
-    background: white;
+    background: var(--white);
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -81,10 +81,10 @@
 .intro-section h2 {
     font-size: 32px;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: var(--titles);
 }
 .intro-section p {
-    color: #666;
+    color: var(--text-main);
     line-height: 1.8;
     font-size: 16px;
 }
@@ -94,7 +94,7 @@ aside {
     background: linear-gradient(135deg, #ff8c42, #ff6b35);
     border-radius: 20px;
     padding: 35px;
-    color: white;
+    color: var(--white);
     box-shadow: 0 8px 25px rgba(255, 140, 66, 0.4);
     height: fit-content;
     animation: floating 3s ease-in-out infinite;
@@ -124,8 +124,8 @@ aside p {
     margin-bottom: 15px;
 }
 .btn-request {
-    background: white;
-    color: #ff6b35;
+    background: var(--white);
+    color: var(--primary);
     border: none;
     padding: 12px 30px;
     border-radius: 25px;
@@ -150,7 +150,7 @@ aside p {
 }
 /* Service Cards */
 article {
-    background: white;
+    background: var(--white);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -190,7 +190,7 @@ article:hover {
 .service-content h2 {
     font-size: 26px;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: var(--titles);
 }
 .service-content p {
     color: #666;
@@ -273,22 +273,23 @@ article:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 .plan-card.featured {
-    border-color: #ff8c42;
+    border-color: var(--primary);
     transform: scale(1.05);
 }
+
 .plan-card h3 {
     font-size: 26px;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--titles);
 }
 .price {
     font-size: 48px;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--titles);
     margin-bottom: 5px;
 }
 .price-period {
-    color: #999;
+    color: var(--text-main);
     font-size: 14px;
     margin-bottom: 30px;
 }
@@ -298,7 +299,7 @@ article:hover {
 }
 .plan-features li {
     padding: 12px 0;
-    color: #666;
+    color: var(--text-main);
     font-size: 15px;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -315,7 +316,7 @@ article:hover {
 }
 .plan-card.featured .btn-plan {
     background: linear-gradient(135deg, #ff8c42, #ff6b35);
-    color: white;
+    color: var(--white);
 }
 /* FAQ Section */
 .faq-section {
@@ -326,10 +327,10 @@ article:hover {
 .faq-section h2 {
     font-size: 42px;
     margin-bottom: 50px;
-    color: #2c3e50; 
+    color: var(--titles); 
 }
 .faq-item {
-    background: white;
+    background: var(--white);
     border-radius: 15px;
     padding: 25px 30px;
     margin-bottom: 20px;
