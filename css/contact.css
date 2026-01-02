@@ -321,8 +321,77 @@
     line-height: 1.5;
 }
 
-/* Ajuste para pantallas pequeñas */
+
+@keyframes pinFloat {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50% { transform: translate(-50%, -65%); }
+}
+
+@media (max-width: 1440px) {
+    .main-wrapper {
+        padding: 60px 40px; /* Añade margen lateral según tu regla */
+    }
+    .content-container {
+        /* Ajuste fino de la proporción de columnas */
+        grid-template-columns: 1fr 1fr 300px; 
+        /* Nota: Para que esta columna de 300px funcione con tus áreas, 
+           ajustamos el grid-template-areas para que use las 3 columnas */
+        grid-template-areas: 
+            "hero hero hero"
+            "form form reviews"
+            "faq faq reviews"
+            "map map map";
+    }
+}
+
+/* --- BREAKPOINT 2: Tablets (1024px a 769px) --- */
+/* El diseño pasa a ser más compacto pero mantiene 2 columnas */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .content-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "hero hero"
+            "form form"
+            "faq reviews"
+            "map map";
+        gap: 30px;
+    }
+
+    .feedback {
+        animation: none; /* Según tu instrucción de quitar animaciones en aside/lateral */
+        text-align: center;
+    }
+
+    .user-info {
+        justify-content: center;
+    }
+}
+
+/* --- BREAKPOINT 3: Móviles Grandes / Tablets Vertical (768px) --- */
+/* Todo a una sola columna y ocultamos elementos si es necesario */
 @media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "hero"
+            "form"
+            "faq"
+            "map"; /* Siguiendo tu lógica de Breakpoint 3 donde el lateral desaparece */
+        gap: 25px;
+    }
+
+    .feedback {
+        display: none; /* El Aside (reseñas) desaparece según tu instrucción */
+    }
+
+    /* Ajuste de los pasos para que no se amontonen */
+    .steps {
+        flex-direction: column;
+        border-radius: 20px;
+        gap: 20px;
+        padding: 20px;
+    }
+
     .workshop-details {
         flex-direction: column;
         gap: 30px;
@@ -334,8 +403,34 @@
     }
 }
 
+/* --- BREAKPOINT 4: Móviles Pequeños (480px) --- */
+@media (max-width: 480px) {
+    .main-wrapper { 
+        padding: 40px 20px; 
+    }
 
-@keyframes pinFloat {
-    0%, 100% { transform: translate(-50%, -50%); }
-    50% { transform: translate(-50%, -65%); }
+    .hero h1 { 
+        font-size: 32px; /* Ajuste de tamaño de fuente según tu instrucción */
+    }
+
+    .hero { 
+        /* Altura ajustada para el área hero en móviles */
+        min-height: 350px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-outline {
+        width: 100%;
+    }
 }
