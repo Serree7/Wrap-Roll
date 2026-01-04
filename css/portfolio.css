@@ -1,4 +1,4 @@
-main {
+.gallery-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,13 +11,14 @@ main {
     max-width: 1440px;
 }
 
+/* --- HERO --- */
 .gallery-hero {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.icon-circle {
-    background: #fff;
+.gallery-hero__icon-container {
+    background: var(--white);
     color: var(--primary);
     width: 60px;
     height: 60px;
@@ -30,7 +31,7 @@ main {
     font-size: 1.5rem;
 }
 
-.gallery-hero h2 {
+.gallery-hero__title {
     font-family: var(--font-display);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
@@ -38,27 +39,28 @@ main {
     margin-bottom: 15px;
 }
 
-.gallery-hero h2 span { 
+.gallery-hero__title span { 
     color: var(--primary); 
 }
 
-.gallery-hero p {
+.gallery-hero__description {
     max-width: 650px;
     margin: 0 auto 35px;
-    color: var(--text-muted);
+    color: var(--text-main);
+    font-family: var(--font-body);
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
-/* Filtros */
-.filter-bar {
+/* --- FILTROS --- */
+.gallery-filter {
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
 }
 
-.filter-btn {
+.gallery-filter__btn {
     padding: 12px 28px;
     border-radius: 40px;
     border: 1px solid #e2e8f0;
@@ -66,62 +68,61 @@ main {
     font-weight: 700;
     font-family: var(--font-display);
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.gallery-filter__btn--active, 
+.gallery-filter__btn:hover {
     background: var(--primary);
     color: var(--white);
     border-color: var(--primary);
     transform: translateY(-2px);
 }
 
-/* =========================================
-   3. GRID MASONRY (PUZZLE DE 3 COLUMNAS)
-   ========================================= */
+/* --- MASONRY GRID --- */
 .gallery-masonry {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas para mayor longitud vertical */
-    grid-auto-rows: 250px; /* Altura base de cada celda */
-    grid-auto-flow: dense; /* Rellena los huecos automáticamente */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
     gap: 25px;
 }
 
-.gallery-item {
+.gallery-masonry__item {
     position: relative;
     border-radius: 24px;
     overflow: hidden;
     background: #e2e8f0;
-    transition: var(--transition);
+    transition: all 0.4s ease;
 }
 
-/* Jerarquía de tamaños */
-.gallery-item.big {
+/* Modificadores de tamaño */
+.gallery-masonry__item--big {
     grid-column: span 2;
     grid-row: span 2;
 }
 
-.gallery-item.tall {
+.gallery-masonry__item--tall {
     grid-row: span 2;
 }
 
-.gallery-item.wide {
+.gallery-masonry__item--wide {
     grid-column: span 2;
 }
 
-/* Imagen y Overlay */
-.image-wrapper { 
-    width: 100%; height: 100%; 
+.gallery-masonry__image-container { 
+    width: 100%; 
+    height: 100%; 
 }
 
-.gallery-item img {
+.gallery-masonry__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease;
 }
 
-.overlay-info {
+.gallery-masonry__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 70%);
@@ -130,73 +131,74 @@ main {
     justify-content: flex-end;
     padding: 30px;
     opacity: 0;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
-/* Hover Effects */
-.gallery-item:hover {
+/* Interacciones */
+.gallery-masonry__item:hover {
     transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(0,0,0,0.15);
     z-index: 10;
 }
 
-.gallery-item:hover img { 
+.gallery-masonry__item:hover .gallery-masonry__img { 
     transform: scale(1.1); 
 }
-.gallery-item:hover .overlay-info { 
+
+.gallery-masonry__item:hover .gallery-masonry__overlay { 
     opacity: 1; 
 }
 
-.overlay-info h3 {
+.gallery-masonry__project-title {
     color: var(--white);
     font-family: var(--font-display);
     font-size: 1.4rem;
     margin-bottom: 5px;
 }
 
-.overlay-info .tag {
+.gallery-masonry__tag {
     color: var(--primary);
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 1px;
 }
 
+/* --- FOOTER GALERÍA --- */
 .gallery-footer {
     display: flex;
     justify-content: center;
     margin-top: 60px;
 }
 
-.load-more-btn {
+.gallery-footer__load-btn {
     background: transparent;
     border: none;
     font-family: var(--font-display);
     font-size: 1rem;
     font-weight: 700;
+    color: var(--dark);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
-.load-more-btn i {
+.gallery-footer__load-btn i {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
 
-.load-more-btn:hover {
+.gallery-footer__load-btn:hover {
     color: var(--primary);
 }
 
-.load-more-btn:hover i {
-    transform: translateY(5px); /* Animación sutil de la flecha */
+.gallery-footer__load-btn:hover i {
+    transform: translateY(5px);
 }
 
-/* =========================================
-   4. RESPONSIVE
-   ========================================= */
+/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
     .gallery-masonry {
         grid-template-columns: repeat(2, 1fr);
@@ -205,8 +207,12 @@ main {
 }
 
 @media (max-width: 768px) {
-    main { padding: 40px 20px; }
-    .gallery-hero h2 { font-size: 2.2rem; }
+    .gallery-wrapper { 
+        padding: 40px 20px; 
+    }
+    .gallery-hero__title {
+        font-size: 2.2rem; 
+    }
 }
 
 @media (max-width: 480px) {
@@ -214,7 +220,9 @@ main {
         grid-template-columns: 1fr;
         grid-auto-rows: 280px;
     }
-    .gallery-item.big, .gallery-item.tall, .gallery-item.wide {
+    .gallery-masonry__item--big, 
+    .gallery-masonry__item--tall, 
+    .gallery-masonry__item--wide {
         grid-column: span 1;
         grid-row: span 1;
     }

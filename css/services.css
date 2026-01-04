@@ -3,21 +3,20 @@
     height: 550px;
     display: flex;
     align-items: center; 
+    /* He ajustado el degradado para que use el tono de tu --primary en RGB (236, 127, 19) */
     background: 
         linear-gradient(
             to bottom, 
-            rgba(0, 0, 0, 0.7) 0%, 
-            rgba(0, 0, 0, 0.3) 50%, 
-            rgba(255, 107, 53, 0.2) 100%
+            rgba(15, 23, 42, 0.7) 0%, /* Usando --dark con opacidad */
+            rgba(15, 23, 42, 0.3) 50%, 
+            rgba(236, 127, 19, 0.3) 100% /* Usando --primary con opacidad */
         ),
         url('../assets/images/hero\ services.jpg');
-    
     background-size: cover;
     background-position: center;
     margin-bottom: 60px;
 }
 
-/* El contenedor limita el ancho del texto a 1440px */
 .hero .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -33,6 +32,7 @@
 }
 
 .hero-tag {
+    font-family: var(--font-display);
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -47,83 +47,92 @@
     font-weight: 800;
     line-height: 1.1;
     text-transform: uppercase;
+    color: var(--white);
     text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
 }
-/* Main Container */
+
+/* --- MAIN LAYOUT --- */
 .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 60px;
 }
-/* Grid Container Principal - AQUÍ ESTÁ EL GRID DE VERDAD */
-.grid-container {
+
+/* --- GRID SYSTEM (BEM: services-grid) --- */
+.services-grid {
     display: grid;
     gap: 30px;
     margin-bottom: 80px;
-    
-    /* Definimos 3 columnas */
     grid-template-columns: 1fr 1fr 320px;
-    
-    /* Mapa Visual del diseño: 3 filas x 3 columnas */
     grid-template-areas: 
         "intro   intro   oferta"
         "marca   marca   oferta"
         "parcial full    full";
 }
-/* Intro Section - Ocupa 2 columnas */
-.intro-section {
+
+/* Intro Section */
+.services-grid__intro {
     grid-area: intro;
     background: var(--white);
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
-.intro-section h2 {
+.services-grid__intro h2 {
     font-size: 32px;
     margin-bottom: 15px;
-    color: var(--titles);
 }
-.intro-section p {
+.services-grid__intro p {
     color: var(--text-main);
     line-height: 1.8;
     font-size: 16px;
 }
 
-aside {
+/* --- PROMO ASIDE (BEM: services-promo) --- */
+.services-promo {
     grid-area: oferta;
-    background: linear-gradient(135deg, #ff8c42, #ff6b35);
+    /* Usamos tus variables para el degradado */
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
     border-radius: 20px;
     padding: 35px;
     color: var(--white);
-    box-shadow: 0 8px 25px rgba(255, 140, 66, 0.4);
+    box-shadow: 0 8px 25px rgba(236, 127, 19, 0.4);
     height: fit-content;
     animation: floating 3s ease-in-out infinite;
 }
-aside h3 {
+.services-promo h3 {
     font-size: 26px;
     margin-bottom: 15px;
+    color: var(--white); /* Forzamos blanco sobre el fondo naranja */
 }
-aside p {
+.services-promo p {
     margin-bottom: 20px;
     line-height: 1.6;
     font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
 }
-.offer-tag {
+
+.services-promo__tag {
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 10px;
     display: block;
+    font-family: var(--font-display);
 }
-.cta-input input {
+
+.services-promo__input-wrapper input {
     width: 100%;
     padding: 12px 18px;
     border: none;
     border-radius: 25px;
     font-size: 14px;
     margin-bottom: 15px;
+    font-family: var(--font-body);
+    color: var(--text-main);
 }
-.btn-request {
+
+.services-promo__btn {
     background: var(--white);
     color: var(--primary);
     border: none;
@@ -134,22 +143,18 @@ aside p {
     font-size: 15px;
     width: 100%;
     transition: transform 0.3s;
+    font-family: var(--font-display);
 }
-.btn-request:hover {
+.services-promo__btn:hover {
     transform: scale(1.05);
 }
-/* Service Articles Grid positions */
-.service-marca {
-    grid-area: marca;
-}
-.service-parcial {
-    grid-area: parcial;
-}
-.service-wrap {
-    grid-area: full;
-}
-/* Service Cards */
-article {
+
+/* --- SERVICE CARDS (BEM: service-card) --- */
+.service-card--branding { grid-area: marca; }
+.service-card--partial  { grid-area: parcial; }
+.service-card--full     { grid-area: full; }
+
+.service-card {
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
@@ -158,68 +163,74 @@ article {
     display: flex;
     flex-direction: column;
 }
-article:hover {
+
+.service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-.service-marca {
+
+/* Ajuste específico para Branding (fila) */
+.service-card--branding {
     flex-direction: row;
 }
-.service-marca .service-image {
+.service-card--branding .service-card__image {
     width: 50%;
     height: 100%;
     object-fit: cover;
 }
-.service-marca .service-content {
+.service-card--branding .service-card__content {
     width: 50%;
 }
-.service-image {
+
+.service-card__image {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
-.service-wrap .service-image {
+.service-card--full .service-card__image {
     height: 250px;
 }
-.service-content {
+
+.service-card__content {
     padding: 30px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-.service-content h2 {
+.service-card__content h2 {
     font-size: 26px;
     margin-bottom: 15px;
-    color: var(--titles);
 }
-.service-content p {
-    color: #666;
+.service-card__content p {
+    color: var(--text-main);
     line-height: 1.7;
     margin-bottom: 20px;
     font-size: 15px;
 }
-.features {
+
+.service-card__features {
     list-style: none;
     margin-bottom: 25px;
     flex: 1;
 }
-.features li {
+.service-card__features li {
     padding: 10px 0;
     display: flex;
     align-items: center;
-    color: #555;
+    color: var(--text-main);
     font-size: 14px;
 }
-.features li::before {
+.service-card__features li::before {
     content: "✓";
-    color: #ff8c42;
+    color: var(--primary);
     font-weight: bold;
     margin-right: 12px;
     font-size: 18px;
 }
-.btn-portfolio {
-    background: linear-gradient(135deg, #ff8c42, #ff6b35);
-    color: white;
+
+.service-card__btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: var(--white);
     border: none;
     padding: 12px 28px;
     border-radius: 25px;
@@ -228,11 +239,13 @@ article:hover {
     font-weight: bold;
     transition: transform 0.3s;
     align-self: flex-start;
+    font-family: var(--font-display);
 }
-.btn-portfolio:hover {
+.service-card__btn:hover {
     transform: scale(1.05);
 }
-/* Plans Section */
+
+/* --- PLANS SECTION --- */
 .plans-section {
     padding: 80px 60px;
     background-color: var(--gray-light);
@@ -242,15 +255,15 @@ article:hover {
     text-align: center;
     font-size: 42px;
     margin-bottom: 15px;
-    color: #2c3e50;
 }
 .plans-section > p {
     text-align: center;
-    color: #666;
+    color: var(--text-main);
     margin-bottom: 60px;
     font-size: 18px;
 }
-.plans-container {
+
+.plans-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -258,8 +271,9 @@ article:hover {
     max-width: 1440px;
     margin: 0 auto;
 }
+
 .plan-card {
-    background: white;
+    background: var(--white);
     border-radius: 20px;
     padding: 40px;
     flex: 1 1 300px;
@@ -272,7 +286,8 @@ article:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
-.plan-card.featured {
+
+.plan-card--featured {
     border-color: var(--primary);
     transform: scale(1.05);
 }
@@ -280,31 +295,35 @@ article:hover {
 .plan-card h3 {
     font-size: 26px;
     margin-bottom: 20px;
-    color: var(--titles);
 }
-.price {
+
+.plan-card__price {
     font-size: 48px;
     font-weight: bold;
     color: var(--titles);
     margin-bottom: 5px;
 }
-.price-period {
+
+.plan-card__period {
     color: var(--text-main);
     font-size: 14px;
     margin-bottom: 30px;
 }
-.plan-features {
+
+.plan-card__features {
     list-style: none;
     margin-bottom: 30px;
 }
-.plan-features li {
+.plan-card__features li {
     padding: 12px 0;
     color: var(--text-main);
     font-size: 15px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--gray-light);
 }
-.btn-plan {
-    background: #f0f0f0;
+
+.plan-card__btn {
+    background: var(--gray-light);
+    color: var(--titles);
     border: none;
     padding: 15px;
     border-radius: 25px;
@@ -313,12 +332,21 @@ article:hover {
     font-weight: bold;
     font-size: 16px;
     transition: all 0.3s;
+    font-family: var(--font-display);
 }
-.plan-card.featured .btn-plan {
-    background: linear-gradient(135deg, #ff8c42, #ff6b35);
+.plan-card__btn:hover {
+    background: #e2e8f0; /* Un poco más oscuro que gray-light para el hover */
+}
+
+.plan-card--featured .plan-card__btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
     color: var(--white);
 }
-/* FAQ Section */
+.plan-card--featured .plan-card__btn:hover {
+    transform: scale(1.02);
+}
+
+/* --- FAQ SECTION --- */
 .faq-section {
     padding: 80px 60px;
     max-width: 1440px;
@@ -329,6 +357,7 @@ article:hover {
     margin-bottom: 50px;
     color: var(--titles); 
 }
+
 .faq-item {
     background: var(--white);
     border-radius: 15px;
@@ -340,41 +369,36 @@ article:hover {
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s;
+    color: var(--titles);
 }
 .faq-item:hover {
     box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    color: var(--primary);
 }
 .faq-item h3 {
     font-size: 18px;
     font-weight: 500;
 }
 
+/* --- ANIMACIONES --- */
 @keyframes floating {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px); /* Sube 15 píxeles */
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
-/* --- BREAKPOINT 1--- */
+/* --- MEDIA QUERIES --- */
 @media (max-width: 1440px) {
     .container {
         padding: 0 40px;
     }
-    .grid-container {
-        grid-template-columns: 1fr 1fr 300px; /* Ajuste fino de columna lateral */
+    .services-grid {
+        grid-template-columns: 1fr 1fr 300px;
     }
 }
 
-/* --- BREAKPOINT 2 --- */
-/* El Aside se mueve al centro y el diseño pasa a 2 columnas */
 @media (max-width: 1024px) and (min-width: 769px) {
-    .grid-container {
+    .services-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
             "intro   intro"
@@ -383,7 +407,7 @@ article:hover {
             "parcial full";
     }
 
-    aside {
+    .services-promo {
         animation: none;
         display: flex;
         flex-direction: column;
@@ -392,14 +416,12 @@ article:hover {
     }
 }
 
-/* --- BREAKPOINT 3 --- */
-/* El Aside desaparece y todo a 1 columna */
 @media (max-width: 768px) {
-    aside {
+    .services-promo {
         display: none;
     }
 
-    .grid-container {
+    .services-grid {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "intro"
@@ -409,17 +431,15 @@ article:hover {
         gap: 25px;
     }
 
-    /* Ajuste de cards internas */
-    .service-marca { 
+    .service-card--branding { 
         flex-direction: column; 
     }
-    .service-marca .service-image, 
-    .service-marca .service-content {
+    .service-card--branding .service-card__image, 
+    .service-card--branding .service-card__content {
         width: 100%;
     }
 }
 
-/* --- BREAKPOINT 4--- */
 @media (max-width: 480px) {
     .container { 
         padding: 0 20px; 

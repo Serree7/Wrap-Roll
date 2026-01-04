@@ -1,3 +1,4 @@
+/* --- LAYOUT --- */
 .main-wrapper {
     width: 100%;
     display: flex;
@@ -17,33 +18,31 @@
         "faq reviews"
         "map map";
     grid-template-columns: 1.6fr 1fr;
-    /* Animación de entrada para toda la página */
     animation: fadeInPage 0.8s ease-out;
 }
 
-/* Asignación de áreas */
-.hero { 
+.hero-section { 
     grid-area: hero; 
     text-align: center; 
 }
-.quote-form { 
+.quote-container { 
     grid-area: form; 
 }
-.feedback { 
+.reviews-section { 
     grid-area: reviews; 
-    display: flex;
+    display: flex; 
     flex-direction: column; 
     gap: 20px; 
-    }
-.faq { 
+}
+.faq-section { 
     grid-area: faq; 
 }
-.workshop { 
+.workshop-section { 
     grid-area: map; 
 }
 
-/* --- ESTILOS HERO --- */
-.icon-circle {
+/* --- HERO --- */
+.hero-section__icon-circle {
     background: #fff;
     color: var(--primary);
     width: 60px;
@@ -57,7 +56,7 @@
     font-size: 1.5rem;
 }
 
-.hero h1 {
+.hero-section__title {
     font-family: var(--font-display);
     font-size: 3rem;
     font-weight: 800;
@@ -65,22 +64,19 @@
     margin-bottom: 10px;
 }
 
-.hero h1 span { 
+.hero-section__title span { 
     color: var(--primary); 
 }
-
-.hero p{
-    color: var(--text-main);
+.hero-section__description { 
+    color: var(--text-main); 
+}
+.hero-section__contact-buttons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin: 30px 0 50px; 
 }
 
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0 50px;
-}
-
-/* --- ANIMACIONES DE BOTONES --- */
 .btn-outline {
     background: var(--white);
     color: var(--dark);
@@ -90,7 +86,8 @@
     font-weight: 600;
     cursor: pointer;
     display: flex;
-    transition: all 0.3s ease; /* Transición suave */
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
@@ -100,10 +97,85 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.btn-outline i{
+.btn-outline i {
     color: var(--primary);
-    padding-right: 20px;
+    padding-right: 12px; 
     font-size: 1.2rem;
+}
+
+/* --- STEPS --- */
+.hero-section__steps {
+    display: flex;
+    background: #FCFBFB;
+    padding: 25px;
+    border-radius: 100px;
+    justify-content: space-around;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+}
+
+.step-item { 
+    font-weight: 700; 
+    font-size: 0.9rem; 
+    gap: 10px;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-item i {
+    background-color: var(--white);
+    color: var(--primary);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* --- FORM CARD --- */
+.quote-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+}
+
+.quote-card__title { 
+    margin-bottom: 30px; 
+    color: var(--titles); 
+    font-family: var(--font-display); 
+}
+.quote-card__title i { 
+    color: var(--primary); 
+}
+
+.form-group { 
+    margin-bottom: 20px; 
+}
+.form-group__label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #64748b;
+}
+
+.form-group__input, .form-group__select, .form-group__textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #f1f5f9;
+    background: #f8fafc;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    transition: all 0.3s ease;
+}
+
+.form-group__input:focus, .form-group__textarea:focus {
+    border-color: var(--primary);
+    background: white;
+    outline: none;
 }
 
 .btn-primary {
@@ -116,7 +188,6 @@
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
-    /* Animación elástica al hacer hover */
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -130,90 +201,14 @@
     transform: translateY(-1px);
 }
 
-/* --- PASOS (STEPS) --- */
-.steps {
-    display: flex;
-    background: #FCFBFB;
-    padding: 25px;
-    border-radius: 100px;
-    justify-content: space-around;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-}
-
-.step { 
-    font-weight: 700; 
-    font-size: 0.9rem; 
-    gap: 10px;
-    color: #94a3b8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.step i{
-    background-color: var(--white);
-    color: var(--primary);
-    width: 45px;  /* Ancho fijo */
-    height: 45px; /* Alto fijo igual al ancho */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-/* --- FORMULARIO --- */
-.card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-}
-
-.card h2 { 
-    margin-bottom: 30px; 
-    color: var(--titles); 
-    font-family: var(--font-display); 
-}
-
-.card h2 i{
-    color: var(--primary);
-}
-
-.input-group { 
-    margin-bottom: 20px; 
-}
-.input-group label {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 800;
-    margin-bottom: 8px;
-    color: #64748b;
-}
-
-.input-group input, .input-group select, .input-group textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1.5px solid #f1f5f9;
-    background: #f8fafc;
-    border-radius: 10px;
-    font-family: var(--font-body);
-    transition: all 0.3s ease;
-}
-
-.input-group input:focus, .input-group textarea:focus {
-    border-color: var(--primary);
-    background: white;
-    outline: none;
-}
-
-/* --- REVIEWS & FAQ --- */
-.section-title {
+/* --- REVIEWS --- */
+.reviews-section__title, .faq-section__title {
     font-family: var(--font-display); 
     margin-bottom: 20px; 
     color: var(--titles); 
-    }
+}
 
-.review-card {
+.review-item {
     background: var(--white);
     border-radius: 20px;
     padding: 25px;
@@ -221,37 +216,40 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
-/* Elevación al pasar el mouse por la reseña */
-.review-card:hover {
+.review-item:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 30px rgba(0,0,0,0.05);
 }
 
-.stars { 
+.review-item__stars { 
     color: var(--primary); 
     margin-bottom: 12px; 
-    font-size: 0.9rem; 
-}
-
-.user-info { display: flex; 
+    font-size: 0.9rem; }
+.review-item__user { 
+    display: flex; 
     align-items: center; 
     gap: 10px; 
-    margin-top: 15px;
+    margin-top: 15px; 
 }
-.avatar {
-    width: 35px;
+.review-item__avatar {
+    width: 35px; 
     height: 35px;
-    background: #ffedd5;
+    background: #ffedd5; 
     color: var(--primary);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
+    border-radius: 8px; 
+    display: flex; 
+    align-items: center; 
     justify-content: center;
-    font-size: 0.7rem;
+    font-size: 0.7rem; 
     font-weight: 700;
 }
+.review-item__avatar--alt { 
+    background: #e2e8f0; 
+    color: #64748b; 
+}
 
-.faq-item {
+/* --- FAQ --- */
+.faq-section__item {
     background: var(--white);
     padding: 20px;
     border-radius: 12px;
@@ -263,79 +261,58 @@
     transition: all 0.3s ease;
 }
 
-/* Efecto visual al pasar por una pregunta */
-.faq-item:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+.faq-section__item:hover { 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12); 
 }
 
-/* --- MAPA --- */
-/* --- MAPA / TALLER --- */
-.workshop {
-    grid-area: map;
+/* --- WORKSHOP / MAP --- */
+.workshop-section {
     background: var(--white);
     border-radius: 20px;
-    overflow: hidden; /* Importante para que el mapa respete las esquinas redondeadas */
+    overflow: hidden;
     margin-top: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.map-area {
-    height: 400px; /* Ajusta la altura a tu gusto */
-    width: 100%;
-    background: #e2e8f0;
-    position: relative;
+.workshop-section__map-area { 
+    height: 400px; 
+    width: 100%; 
+    background: #e2e8f0; 
 }
-
-.map-area iframe {
-    display: block; /* Elimina espacios extra debajo del iframe */
-    width: 100%;
-    height: 100%;
-    border: none;
+.workshop-section__map-area iframe { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+    display: block; 
 }
-
-.workshop-details {
-    display: flex;
-    padding: 40px;
-    gap: 80px;
+.workshop-section__info { 
+    display: flex; 
+    padding: 40px; 
+    gap: 80px; 
 }
-
-.detail-box {
-    flex: 1;
+.workshop-section__detail { 
+    flex: 1; 
 }
-
-.detail-box h4 { 
+.workshop-section__detail-title { 
     margin-bottom: 12px; 
     font-family: var(--font-display); 
     color: var(--dark);
-    display: flex;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
     gap: 10px;
 }
-
-.detail-box h4 i {
-    color: var(--primary); /* Iconos de ubicación y reloj en naranja */
+.workshop-section__detail-title i { 
+    color: var(--primary); 
+}
+.workshop-section__detail-text { 
+    color: var(--text-main); 
+    line-height: 1.5; 
 }
 
-.detail-box p {
-    color: var(--text-main);
-    line-height: 1.5;
-}
-
-
-@keyframes pinFloat {
-    0%, 100% { transform: translate(-50%, -50%); }
-    50% { transform: translate(-50%, -65%); }
-}
-
+/* --- MEDIA QUERIES (Updated Selectors) --- */
 @media (max-width: 1440px) {
-    .main-wrapper {
-        padding: 60px 40px; /* Añade margen lateral según tu regla */
-    }
     .content-container {
-        /* Ajuste fino de la proporción de columnas */
         grid-template-columns: 1fr 1fr 300px; 
-        /* Nota: Para que esta columna de 300px funcione con tus áreas, 
-           ajustamos el grid-template-areas para que use las 3 columnas */
         grid-template-areas: 
             "hero hero hero"
             "form form reviews"
@@ -344,93 +321,63 @@
     }
 }
 
-/* --- BREAKPOINT 2: Tablets (1024px a 769px) --- */
-/* El diseño pasa a ser más compacto pero mantiene 2 columnas */
 @media (max-width: 1024px) and (min-width: 769px) {
     .content-container {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-            "hero hero"
-            "form form"
-            "faq reviews"
-            "map map";
-        gap: 30px;
+        "hero hero" 
+        "form form" 
+        "faq reviews" 
+        "map map";
     }
-
-    .feedback {
-        animation: none; /* Según tu instrucción de quitar animaciones en aside/lateral */
-        text-align: center;
+    .reviews-section { 
+        text-align: center; 
     }
-
-    .user-info {
-        justify-content: center;
+    .review-item__user { 
+        justify-content: center; 
     }
 }
 
-/* --- BREAKPOINT 3: Móviles Grandes / Tablets Vertical (768px) --- */
-/* Todo a una sola columna y ocultamos elementos si es necesario */
 @media (max-width: 768px) {
     .content-container {
         grid-template-columns: 1fr;
         grid-template-areas: 
-            "hero"
-            "form"
-            "faq"
-            "map"; /* Siguiendo tu lógica de Breakpoint 3 donde el lateral desaparece */
-        gap: 25px;
+        "hero" 
+        "form" 
+        "faq" 
+        "map";
     }
-
-    .feedback {
-        display: none; /* El Aside (reseñas) desaparece según tu instrucción */
+    .reviews-section { 
+        display: none; 
     }
-
-    /* Ajuste de los pasos para que no se amontonen */
-    .steps {
+    .hero-section__steps { 
         flex-direction: column;
-        border-radius: 20px;
-        gap: 20px;
-        padding: 20px;
+        border-radius: 20px; 
+        }
+    .workshop-section__info { 
+        flex-direction: column; 
     }
 
-    .workshop-details {
+    .hero-section__contact-buttons {
         flex-direction: column;
-        gap: 30px;
-        padding: 30px;
-    }
-    
-    .map-area {
-        height: 300px;
+        align-items: center;
     }
 }
 
-/* --- BREAKPOINT 4: Móviles Pequeños (480px) --- */
 @media (max-width: 480px) {
-    .main-wrapper { 
-        padding: 40px 20px; 
-    }
-
-    .hero h1 { 
-        font-size: 32px; /* Ajuste de tamaño de fuente según tu instrucción */
-    }
-
-    .hero { 
-        /* Altura ajustada para el área hero en móviles */
-        min-height: 350px; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .card {
-        padding: 25px 20px;
-    }
-
-    .contact-buttons {
-        flex-direction: column;
-        width: 100%;
+    .hero-section__title { 
+        font-size: 32px; 
     }
 
     .btn-outline {
         width: 100%;
+        justify-content: center;
+    }
+
+    .hero-section { 
+        min-height: 350px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
     }
 }
