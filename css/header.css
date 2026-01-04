@@ -1,4 +1,4 @@
-.header{
+.header {
     width: 100%;
     height: 90px;
     margin: 0;
@@ -9,7 +9,7 @@
     background-color: var(--white);
 }
 
-.header__container{
+.header__container {
     max-width: 1440px;
     width: 100%;
     padding: 0 20px;
@@ -20,26 +20,26 @@
     flex-wrap: wrap;
 }
 
-.header__logo-container{
+.header__logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.image__logo{
+.image__logo {
     width: 100px;
 }
 
-.header__title{
+.header__title {
     color: var(--dark);
     font-family: var(--font-display);
 }
 
-.header__title--orange{
+.header__title--orange {
     color: var(--primary);
 }
 
-.menu{
+.menu {
     display: flex;
     list-style-type: none;
     width: 400px;
@@ -47,11 +47,11 @@
     flex-wrap: wrap;
 }
 
-.menu__item{
+.menu__item {
     width: 100px;
 }
 
-.menu__item a{
+.menu__item a {
     text-decoration: none;
     display: block;
     color: var(--dark);
@@ -62,23 +62,29 @@
     font-size: 1.2rem;
 }
 
-.menu__item a:hover{
+.menu__item a:hover {
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
 }
 
-.nav__actions{
-    display: flex;
+/* Ocultar el botón de contacto dentro de la lista en desktop */
+.menu__item--contact {
+    display: none;
 }
 
-.header__button{
+.nav__actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header__button {
     width: 150px;
     height: 50px;
     cursor: pointer;
     color: var(--dark);
 }
 
-.header__button button{
+.header__button button {
     border: none;
     width: 100%;
     height: 100%;
@@ -90,7 +96,7 @@
     font-family: var(--font-body);
 }
 
-.header__button button:hover{
+.header__button button:hover {
     background-color: var(--dark);
     color: var(--white);
 }
@@ -98,10 +104,9 @@
 .nav__burger {
     background: none;
     cursor: pointer;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    display: none;   
 }
 
 .nav__burger i {
@@ -110,6 +115,98 @@
     transition: 0.3s;
 }
 
-.nav__burger i:hover{
+.nav__burger i:hover {
     color: var(--primary);
+}
+
+
+@media (max-width: 1200px) {
+    .menu {
+        width: 350px;
+        justify-content: space-around;
+    }
+    .header__button {
+        width: 140px;
+        height: 45px;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+
+    .header__nav {
+        display: none;
+        position: absolute;
+        top: 90px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+
+    .header__nav.nav--open {
+        display: flex;
+    }
+
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+
+    .menu__item--contact {
+        display: block; 
+        width: 70%;
+        max-width: 220px;
+        margin: 0 auto;
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 12px 0;
+        border-radius: 30px;
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .nav__actions .header__button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu__item--contact a {
+        width: 80%;
+        max-width: 200px;
+        padding: 10px 0;
+    }
+
+    .menu__item a {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================
+   MÓVIL XS
+   ≤480px
+========================== */
+@media (max-width: 480px) {
+    .menu__item--contact a {
+        width: 90%;
+    }
+    .menu {
+        gap: 10px;
+    }
 }
