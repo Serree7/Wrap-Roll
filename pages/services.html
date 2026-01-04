@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Wrap&Roll</title>
-    <!-- Font Awesome Free -->
-     
+    <!-- Font Awesome Free for icons -->
 <script src="https://kit.fontawesome.com/37d738c597.js" crossorigin="anonymous"></script>
+<link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
 
+    <!-- CSS files -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/services.css">
@@ -16,12 +17,15 @@
     <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
         <div class="header__container">
+            <!-- Logo and Site Title -->
             <div class="header__logo-container">
                 <a href="../index.html"><img src="../assets/images/logo.png" class="image__logo" alt="Wrap&Roll logo"></a>
                 <h1 class="header__title"><span class="header__title--orange">Wrap&</span>Roll</h1>
             </div>
+            <!-- Navigation Menu -->
             <nav class="header__nav">
                 <ul class="menu">
                     <li class="menu__item"><a href="./services.html">Servicios</a></li>
@@ -34,6 +38,7 @@
                     </li>
                 </ul>
             </nav>
+            <!-- Contact Button & Burger Menu for Mobile -->
             <div class="nav__actions">
                 <a class="header__button" href="./contact.html">
                     <button>Contáctanos</button>
@@ -42,52 +47,59 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-            
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-tag">EXPERTOS EN VINYL</p>
-                <h1>Transformamos tu Food Truck</h1>
+                <p class="hero-tag">EXPERTOS EN VINYL</p> <!-- Tagline -->
+                <h1>Transformamos tu Food Truck</h1> <!-- Main Hero Title -->
             </div>
         </div>
     </section>
 
 <main>
     <div class="container">
+        <!-- Services Grid Section -->
         <div class="services-grid">
 
+            <!-- Intro Text for Services -->
             <section class="services-grid__intro">
                 <h2>Lo que hacemos mejor</h2>
                 <p>Desde el concepto inicial hasta la instalación final, ofrecemos soluciones completas de diseño y rotulación para que tu negocio destaque en las calles.</p>
             </section>
 
+            <!-- Promotional Banner -->
             <aside class="services-promo">
                 <span class="services-promo__tag"><i class="fa-solid fa-bolt-lightning"></i> OFERTA ESPECIAL</span>
                 <h3>¡Despega tu negocio!</h3>
                 <p>Obtén un 15% de descuento en tu primer servicio. No dejes pasar esta oportunidad de transformar tu food truck.</p>
                 <div class="services-promo__input-wrapper">
-                    <input type="email" placeholder="tu@email.com">
+                    <input type="email" placeholder="tu@email.com"> <!-- Email input -->
                 </div>
                 <button class="services-promo__btn">Solicitar Descuento →</button>
             </aside>
 
+            <!-- Service Card: Branding -->
             <article class="service-card service-card--branding">
-                <img src="../assets/images/design.jpg" alt="Diseño de Marca" class="service-card__image">
+                <img src="../assets/images/design.jpg" alt="Diseño de Marca" class="service-card__image"> <!-- Service Image -->
                 <div class="service-card__content">
-                    <h2>Diseño de Marca</h2>
-                    <p>Creamos tu identidad visual perfecta, desde el logo hasta el diseño completo de tu food truck. Nuestro equipo de diseñadores expertos desarrolla conceptos únicos.</p>
+                    <h2>Diseño de Marca</h2> <!-- Service Title -->
+                    <p>Creamos tu identidad visual perfecta, desde el logo hasta el diseño completo de tu food truck. Nuestro equipo de diseñadores expertos desarrolla conceptos únicos.</p> <!-- Description -->
                     <ul class="service-card__features">
                         <li>Logotipo profesional</li>
                         <li>Diseño de comunicación visual</li>
                         <li>Visualización 3D</li>
                     </ul>
-                    <button class="service-card__btn">Ver Portafolio</button>
+                    <a href="./portfolio.html">
+                        <button class="service-card__btn">Ver Portafolio</button>
+                    </a>
                 </div>
             </article>
 
+            <!-- Service Card: Partial Wrap -->
             <article class="service-card service-card--partial">
                 <img src="../assets/images/partial.jpg" alt="Rotulación Parcial" class="service-card__image">
                 <div class="service-card__content">
@@ -98,10 +110,13 @@
                         <li>Logotipo y elementos clave</li>
                         <li>Instalación profesional</li>
                     </ul>
-                    <button class="service-card__btn">Ver Ejemplos</button>
+                    <a href="./portfolio.html">
+                        <button class="service-card__btn">Ver Ejemplos</button>
+                    </a>
                 </div>
             </article>
 
+            <!-- Service Card: Full Wrap -->
             <article class="service-card service-card--full">
                 <img src="../assets/images/full wrpa.jpg" alt="Full Wrap" class="service-card__image">
                 <div class="service-card__content">
@@ -112,18 +127,22 @@
                         <li>Acabado mate o brillante</li>
                         <li>Instalación profesional</li>
                     </ul>
-                    <button class="service-card__btn">Ver Galería Full Wrap</button>
+                    <a href="./portfolio.html">
+                        <button class="service-card__btn">Ver Galería Full Wrap</button>
+                    </a>
                 </div>
             </article>
 
         </div>
     </div>
 
+    <!-- Plans & Packages Section -->
     <section class="plans-section">
         <h2>Planes y Paquetes</h2>
         <p>Adaptados a tu presupuesto</p>
 
         <div class="plans-grid">
+            <!-- Plan Card: Emprendedor -->
             <div class="plan-card">
                 <h3>Emprendedor</h3>
                 <div class="plan-card__price">350€</div>
@@ -137,6 +156,7 @@
                 <button class="plan-card__btn">Elegir Plan</button>
             </div>
 
+            <!-- Plan Card: Profesional (Featured) -->
             <div class="plan-card plan-card--featured">
                 <h3>Profesional <i class="fa-solid fa-star"></i></h3>
                 <div class="plan-card__price">$850</div>
@@ -151,6 +171,7 @@
                 <button class="plan-card__btn">Elegir Plan</button>
             </div>
 
+            <!-- Plan Card: Premium -->
             <div class="plan-card">
                 <h3>Premium</h3>
                 <div class="plan-card__price">$1,500</div>
@@ -167,12 +188,13 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
     <section class="faq-section">
         <h2>Preguntas Frecuentes</h2>
 
         <div class="faq-item">
             <h3>¿Cuánto dura el vinyl?</h3>
-            <span>▼</span>
+            <span>▼</span> <!-- Dropdown icon -->
         </div>
 
         <div class="faq-item">
@@ -186,65 +208,75 @@
         </div>
     </section>
 </main>
-    <footer class="footer">
-        <div class="container-footer">
-            <div class="footer__grid">
 
-                <div class="footer__col footer__col--brand">
-                    <div class="footer__logo">
-                        <a href=""><img src="../assets/images/logo.png" class="image__logo" alt="Wrap&Roll logo"></a>
-                        <h1 class="footer__principal"><span class="header__title--orange">Wrap&</span>Roll</h1>
-                    </div>
-                    <p class="footer__description">
-                        Ayudando a los food trucks a destacarse entre la multitud desde 2015. Materiales de primera calidad, diseños galardonados.
-                    </p>
-                    <div class="footer__socials">
-                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container-footer">
+        <div class="footer__grid">
+
+            <!-- Brand Info -->
+            <div class="footer__col footer__col--brand">
+                <div class="footer__logo">
+                    <a href=""><img src="../assets/images/logo.png" class="image__logo" alt="Wrap&Roll logo"></a>
+                    <h1 class="footer__principal"><span class="header__title--orange">Wrap&</span>Roll</h1>
                 </div>
-
-                <div class="footer__col">
-                    <h4 class="footer__title">Servicios</h4>
-                    <ul class="footer__list">
-                        <li><a href="#">Vinilados completos</a></li>
-                        <li><a href="#">Vinilados Parciales</a></li>
-                        <li><a href="#">Calcomanías y lettering</a></li>
-                        <li><a href="#">Diseño Gráfico</a></li>
-                    </ul>
+                <p class="footer__description">
+                    Ayudando a los food trucks a destacarse entre la multitud desde 2015. Materiales de primera calidad, diseños galardonados.
+                </p>
+                <!-- Social Media Links -->
+                <div class="footer__socials">
+                    <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-
-                <div class="footer__col">
-                    <h4 class="footer__title">Contacto</h4>
-                    <ul class="footer__contact-info">
-                        <li><i class="fa-solid fa-location-dot"></i> Av. Real Fábrica de Sedas, s/n, 45600 Talavera de la Reina, Toledo</li>
-                        <li><i class="fa-solid fa-phone"></i> +34 925 722 233</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@wraproll.es</li>
-                    </ul>
-                </div>
-
-                <div class="footer__col">
-                    <h4 class="footer__title">Mantente Informado</h4>
-                    <p class="footer__newsletter-text">Suscríbete para consejos dediseño y ofertas exclusivas</p>
-                    <form class="footer__form">
-                        <input type="email" placeholder="Correo electrónico" class="footer__input">
-                        <button type="submit" class="footer__btn-submit">Suscribirse</button>
-                    </form>
-                </div>
-
             </div>
 
-            <div class="footer__bottom">
-                <p>© 2024 Wrap&Roll Inc. Todos los derechos reservados.</p>
-                <div class="footer__legal">
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Términos de Servicio</a>
-                </div>
+            <!-- Services Links -->
+            <div class="footer__col">
+                <h4 class="footer__title">Servicios</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Vinilados completos</a></li>
+                    <li><a href="#">Vinilados Parciales</a></li>
+                    <li><a href="#">Calcomanías y lettering</a></li>
+                    <li><a href="#">Diseño Gráfico</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer__col">
+                <h4 class="footer__title">Contacto</h4>
+                <ul class="footer__contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> Av. Real Fábrica de Sedas, s/n, 45600 Talavera de la Reina, Toledo</li>
+                    <li><i class="fa-solid fa-phone"></i> +34 925 722 233</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@wraproll.es</li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="footer__col">
+                <h4 class="footer__title">Mantente Informado</h4>
+                <p class="footer__newsletter-text">Suscríbete para consejos dediseño y ofertas exclusivas</p>
+                <form class="footer__form">
+                    <input type="email" placeholder="Correo electrónico" class="footer__input">
+                    <button type="submit" class="footer__btn-submit">Suscribirse</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer__bottom">
+            <p>© 2024 Wrap&Roll Inc. Todos los derechos reservados.</p>
+            <div class="footer__legal">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
             </div>
         </div>
-    </footer>
-    <script src="../js/script.js"></script>
+    </div>
+</footer>
+
+<!-- JS file -->
+<script src="../js/script.js"></script>
 </body>
 </html>

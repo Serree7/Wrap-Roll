@@ -1,78 +1,78 @@
 .process-wrapper {
     width: 100%;
-    background-color: var(--gray-light);
-    padding: 100px 0;
+    background-color: var(--gray-light); /* Light gray background */
+    padding: 100px 0; /* Top and bottom padding */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center container horizontally */
 }
 
 .process-container {
     width: 100%;
-    max-width: 1440px;
-    padding: 0 40px;
+    max-width: 1440px; /* Limit container width */
+    padding: 0 40px; /* Horizontal padding */
 }
 
-/* --- HERO --- */
+/* --- HERO SECTION --- */
 .process-hero {
-    text-align: center;
-    margin-bottom: 100px;
+    text-align: center; /* Center text */
+    margin-bottom: 100px; /* Space below hero */
 }
 
 .process-hero__badge {
-    background: #fff1e6; 
-    color: var(--primary);
+    background: #fff1e6; /* Light orange background */
+    color: var(--primary); /* Primary text color */
     padding: 8px 18px;
-    border-radius: 50px;
+    border-radius: 50px; /* Pill shape */
     font-size: 0.8rem;
     font-weight: 800;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* Space between icon/text */
     margin-bottom: 25px;
 }
 
 .process-hero__title {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-family: var(--font-display); /* Display font */
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font */
     font-weight: 800;
     color: var(--dark);
     margin-bottom: 20px;
 }
 
 .process-hero__title span { 
-    color: var(--primary); 
+    color: var(--primary); /* Highlight span in primary color */
 }
 
 .process-hero__description {
-    max-width: 700px;
+    max-width: 700px; /* Limit width */
     margin: 0 auto;
-    color: var(--text-main);
+    color: var(--text-main); /* Body text color */
     font-family: var(--font-body);
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.7; /* Readable line spacing */
 }
 
 /* --- TIMELINE --- */
 .process-timeline {
     position: relative;
     max-width: 1100px;
-    margin: 0 auto 120px;
+    margin: 0 auto 120px; /* Center timeline and bottom margin */
 }
 
 .process-timeline__bar {
     position: absolute;
-    left: 50%;
+    left: 50%; /* Center vertical bar */
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: #fed7aa; /* Tono naranja muy suave para la línea */
+    background: #fed7aa; /* Soft orange line */
 }
 
 .process-timeline__step {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 80px; /* Space between steps */
 }
 
 .process-timeline__icon {
@@ -80,22 +80,22 @@
     height: 65px;
     background: var(--white);
     border: 2px solid var(--primary);
-    border-radius: 50%;
+    border-radius: 50%; /* Circle */
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary);
     font-size: 1.3rem;
-    z-index: 10;
+    z-index: 10; /* On top of timeline bar */
     box-shadow: 0 10px 20px rgba(236, 127, 19, 0.1);
 }
 
 .process-timeline__text {
     width: 45%;
-    padding: 0 40px;
+    padding: 0 40px; /* Space around text */
 }
 
-/* Modificadores de posición */
+/* Modifiers for left/right positioning */
 .process-timeline__step--left { 
     justify-content: flex-end; 
 }
@@ -113,20 +113,20 @@
 .process-timeline__step-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
-    color: var(--titles);
+    color: var(--titles); /* Title color */
     margin-bottom: 12px;
 }
 
 .process-timeline__step-description { 
     font-family: var(--font-body);
     color: var(--text-main);
-    line-height: 1.6; 
+    line-height: 1.6; /* Readable line height */
 }
 
-/* --- CTA --- */
+/* --- CTA SECTION --- */
 .process-cta {
-    background-color: var(--primary);
-    background-image: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent);
+    background-color: var(--primary); /* Primary background */
+    background-image: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent); /* Subtle radial effect */
     border-radius: 40px;
     padding: 80px 40px;
     text-align: center;
@@ -144,7 +144,7 @@
     font-family: var(--font-body);
     font-size: 1.2rem; 
     margin-bottom: 40px; 
-    opacity: 0.95; 
+    opacity: 0.95; /* Slight transparency for subtle effect */
 }
 
 .process-cta__button {
@@ -152,7 +152,7 @@
     color: var(--primary);
     border: none;
     padding: 18px 45px;
-    border-radius: 50px;
+    border-radius: 50px; /* Pill button */
     font-weight: 800;
     font-family: var(--font-display);
     cursor: pointer;
@@ -163,17 +163,17 @@
 }
 
 .process-cta__button:hover { 
-    transform: translateY(-5px); 
+    transform: translateY(-5px); /* Lift on hover */
     background-color: var(--gray-light);
 }
 
-/* --- RESPONSIVE BEM --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
     .process-hero__title { 
-        font-size: 3rem; 
+        font-size: 3rem; /* Smaller on tablet */
     }
     .process-timeline { 
-        max-width: 900px; 
+        max-width: 900px; /* Reduce timeline width */
     }
     .process-timeline__step-title { 
         font-size: 1.3rem; 
@@ -193,7 +193,7 @@
     }
     .process-timeline__bar { 
         left: 30px; 
-        transform: none; 
+        transform: none; /* Adjust bar for mobile */
     }
 
     .process-timeline__step {
@@ -204,14 +204,14 @@
 
     .process-timeline__step--left .process-timeline__text,
     .process-timeline__step--right .process-timeline__text {
-        width: 100%;
-        text-align: left;
-        padding-left: 80px;
+        width: 100%; /* Full width text */
+        text-align: left; 
+        padding-left: 80px; 
         padding-right: 0;
     }
 
     .process-timeline__icon {
-        position: absolute;
+        position: absolute; 
         left: 0;
         width: 60px;
         height: 60px;

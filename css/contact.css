@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     padding: 60px 20px;
-    background-color: var(--gray-light);
+    background-color: var(--gray-light); /* Light gray background */
 }
 
 .content-container {
@@ -16,11 +16,12 @@
         "hero hero"
         "form reviews"
         "faq reviews"
-        "map map";
+        "map map"; /* Define layout areas */
     grid-template-columns: 1.6fr 1fr;
-    animation: fadeInPage 0.8s ease-out;
+    animation: fadeInPage 0.8s ease-out; /* Page fade-in animation */
 }
 
+/* Grid areas */
 .hero-section { 
     grid-area: hero; 
     text-align: center; 
@@ -41,7 +42,7 @@
     grid-area: map; 
 }
 
-/* --- HERO --- */
+/* --- HERO SECTION --- */
 .hero-section__icon-circle {
     background: #fff;
     color: var(--primary);
@@ -65,10 +66,10 @@
 }
 
 .hero-section__title span { 
-    color: var(--primary); 
+    color: var(--primary); /* Highlighted text */
 }
 .hero-section__description { 
-    color: var(--text-main); 
+    color: var(--text-main); /* Main descriptive text */
 }
 .hero-section__contact-buttons { 
     display: flex; 
@@ -77,6 +78,7 @@
     margin: 30px 0 50px; 
 }
 
+/* Buttons */
 .btn-outline {
     background: var(--white);
     color: var(--dark);
@@ -103,7 +105,7 @@
     font-size: 1.2rem;
 }
 
-/* --- STEPS --- */
+/* --- STEPS / PROCESS --- */
 .hero-section__steps {
     display: flex;
     background: #FCFBFB;
@@ -139,7 +141,7 @@
     background: var(--white);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02); /* Light card shadow */
 }
 
 .quote-card__title { 
@@ -151,6 +153,7 @@
     color: var(--primary); 
 }
 
+/* Form groups */
 .form-group { 
     margin-bottom: 20px; 
 }
@@ -181,6 +184,7 @@
     outline: none;
 }
 
+/* Primary submit button */
 .btn-primary {
     width: 100%;
     background: var(--primary);
@@ -228,7 +232,8 @@
 .review-item__stars { 
     color: var(--primary); 
     margin-bottom: 12px; 
-    font-size: 0.9rem; }
+    font-size: 0.9rem; 
+}
 .review-item__user { 
     display: flex; 
     align-items: center; 
@@ -313,7 +318,7 @@
     line-height: 1.5; 
 }
 
-/* --- MEDIA QUERIES (Updated Selectors) --- */
+/* --- MEDIA QUERIES --- */
 @media (max-width: 1440px) {
     .content-container {
         grid-template-columns: 1fr 1fr 300px; 
@@ -352,12 +357,12 @@
         "map";
     }
     .reviews-section { 
-        display: none; 
+        display: none; /* Hide reviews on mobile */
     }
     .hero-section__steps { 
         flex-direction: column;
         border-radius: 20px; 
-        }
+    }
     .workshop-section__info { 
         flex-direction: column; 
     }
@@ -370,7 +375,7 @@
 
 @media (max-width: 480px) {
     .hero-section__title { 
-        font-size: 32px; 
+        font-size: 32px; /* Smaller hero title */
     }
 
     .btn-outline {

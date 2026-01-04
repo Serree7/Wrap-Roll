@@ -5,27 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Wrap&Roll</title>
-     
-<script src="https://kit.fontawesome.com/37d738c597.js" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/37d738c597.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/contact.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- Main styles -->
+    <link rel="stylesheet" href="../css/header.css"> <!-- Header styles -->
+    <link rel="stylesheet" href="../css/contact.css"> <!-- Contact page styles -->
+    <link rel="stylesheet" href="../css/footer.css"> <!-- Footer styles -->
+    <link rel="stylesheet" href="../css/responsive.css"> <!-- Responsive adjustments -->
 </head>
 <body>
+    <!-- HEADER SECTION -->
     <header class="header">
         <div class="header__container">
             <div class="header__logo-container">
+                <!-- Logo and site title -->
                 <a href="../index.html"><img src="../assets/images/logo.png" class="image__logo" alt="Wrap&Roll logo"></a>
                 <h1 class="header__title"><span class="header__title--orange">Wrap&</span>Roll</h1>
             </div>
+
+            <!-- Navigation menu -->
             <nav class="header__nav">
                 <ul class="menu">
                     <li class="menu__item"><a href="./services.html">Servicios</a></li>
                     <li class="menu__item"><a href="./portfolio.html">Portafolio</a></li>
                     <li class="menu__item"><a href="./process.html">Proceso</a></li>
+                    <!-- Contact link for mobile menu -->
                     <li class="menu__item menu__item--contact">
                         <a href="./contact.html" class="menu__contact-btn">
                             Contáctanos
@@ -33,120 +41,147 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- Action buttons and hamburger menu -->
             <div class="nav__actions">
+                <!-- Desktop contact button -->
                 <a class="header__button" href="./contact.html">
                     <button>Contáctanos</button>
                 </a>
+                <!-- Hamburger menu toggle -->
                 <button class="nav__burger" id="menu-toggle">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-            
         </div>
     </header>
-<main class="main-wrapper">
-    <div class="content-container">
-        <section class="hero-section">
-            <div class="hero-section__icon-circle"><i class="fa-solid fa-palette"></i></div>
-            <h1 class="hero-section__title">Comienza tu <span>Transformación</span></h1>
-            <p class="hero-section__description">¿Listo para destacar? Rotulamos tu food truck. Rellena el formulario o contáctanos directamente.</p>
-            
-            <div class="hero-section__contact-buttons">
-                <button class="btn-outline"><i class="fa-solid fa-phone"></i>Llamar</button>
-                <button class="btn-outline"><i class="fa-regular fa-envelope"></i>Email</button>
-                <button class="btn-outline"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
-            </div>
 
-            <div class="hero-section__steps">
-                <div class="step-item"><i class="fa-solid fa-file-pen"></i><span>1. PRESUPUESTO</span></div>
-                <div class="step-item"><i class="fa-solid fa-paintbrush"></i><span>2. DISEÑO</span></div>
-                <div class="step-item"><i class="fa-regular fa-truck"></i><span>3. ROTULACIÓN</span></div>
-            </div>
-        </section>
+    <!-- MAIN CONTENT -->
+    <main class="main-wrapper">
+        <div class="content-container">
+            <!-- HERO SECTION -->
+            <section class="hero-section">
+                <!-- Hero icon -->
+                <div class="hero-section__icon-circle"><i class="fa-solid fa-palette"></i></div>
+                <!-- Hero title -->
+                <h1 class="hero-section__title">Comienza tu <span>Transformación</span></h1>
+                <p class="hero-section__description">
+                    ¿Listo para destacar? Rotulamos tu food truck. Rellena el formulario o contáctanos directamente.
+                </p>
 
-        <section class="quote-container">
-            <div class="quote-card">
-                <h2 class="quote-card__title"><i class="fa-solid fa-file-invoice-dollar"></i>Solicitar Presupuesto</h2>
-                <form class="quote-card__form">
-                    <div class="form-group">
-                        <label class="form-group__label">NOMBRE COMPLETO</label>
-                        <input class="form-group__input" type="text" placeholder="Juan Pérez">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-group__label">CORREO ELECTRÓNICO</label>
-                        <input class="form-group__input" type="email" placeholder="tu@empresa.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-group__label">TIPO DE VEHÍCULO</label>
-                        <select class="form-group__select">
-                            <option>Food Truck (Estándar)</option>
-                            <option>Remolque</option>
-                            <option>Furgoneta</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-group__label">DETALLES DEL PROYECTO</label>
-                        <textarea class="form-group__textarea" placeholder="Cuéntanos tu idea, colores, marca..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Obtener Presupuesto Gratis</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="reviews-section">
-            <h3 class="reviews-section__title">Opiniones Recientes</h3>
-            
-            <div class="review-item">
-                <div class="review-item__stars">★★★★★</div>
-                <p class="review-item__text">"Trabajo increíble en nuestro camión de tacos. Los colores son vibrantes y la instalación fue muy rápida."</p>
-                <div class="review-item__user">
-                    <span class="review-item__avatar">TR</span>
-                    <span class="review-item__name"><strong>Tacos El Rey</strong></span>
+                <!-- Hero contact buttons -->
+                <div class="hero-section__contact-buttons">
+                    <button class="btn-outline"><i class="fa-solid fa-phone"></i>Llamar</button>
+                    <button class="btn-outline"><i class="fa-regular fa-envelope"></i>Email</button>
+                    <button class="btn-outline"><i class="fa-brands fa-whatsapp"></i>WhatsApp</button>
                 </div>
-            </div>
 
-            <div class="review-item">
-                <div class="review-item__stars">★★★★★</div>
-                <p class="review-item__text">"Equipo muy profesional. Gestionaron el diseño desde cero y el resultado es sencillamente espectacular."</p>
-                <div class="review-item__user">
-                    <span class="review-item__avatar review-item__avatar--alt">BB</span>
-                    <span class="review-item__name"><strong>Burger Bros</strong></span>
+                <!-- Hero steps -->
+                <div class="hero-section__steps">
+                    <div class="step-item"><i class="fa-solid fa-file-pen"></i><span>1. PRESUPUESTO</span></div>
+                    <div class="step-item"><i class="fa-solid fa-paintbrush"></i><span>2. DISEÑO</span></div>
+                    <div class="step-item"><i class="fa-regular fa-truck"></i><span>3. ROTULACIÓN</span></div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="faq-section">
-            <h3 class="faq-section__title">Preguntas Frecuentes</h3>
-            <div class="faq-section__item">¿Cuánto cuesta una rotulación completa? <span>▼</span></div>
-            <div class="faq-section__item">¿Ofrecen servicios de diseño? <span>▼</span></div>
-            <div class="faq-section__item">¿Cuánto tiempo dura el vinilo? <span>▼</span></div>
-        </section>
+            <!-- QUOTE / CONTACT FORM -->
+            <section class="quote-container">
+                <div class="quote-card">
+                    <h2 class="quote-card__title"><i class="fa-solid fa-file-invoice-dollar"></i>Solicitar Presupuesto</h2>
+                    <form class="quote-card__form">
+                        <!-- Name input -->
+                        <div class="form-group">
+                            <label class="form-group__label">NOMBRE COMPLETO</label>
+                            <input class="form-group__input" type="text" placeholder="Juan Pérez">
+                        </div>
+                        <!-- Email input -->
+                        <div class="form-group">
+                            <label class="form-group__label">CORREO ELECTRÓNICO</label>
+                            <input class="form-group__input" type="email" placeholder="tu@empresa.com">
+                        </div>
+                        <!-- Vehicle type select -->
+                        <div class="form-group">
+                            <label class="form-group__label">TIPO DE VEHÍCULO</label>
+                            <select class="form-group__select">
+                                <option>Food Truck (Estándar)</option>
+                                <option>Remolque</option>
+                                <option>Furgoneta</option>
+                            </select>
+                        </div>
+                        <!-- Project details textarea -->
+                        <div class="form-group">
+                            <label class="form-group__label">DETALLES DEL PROYECTO</label>
+                            <textarea class="form-group__textarea" placeholder="Cuéntanos tu idea, colores, marca..."></textarea>
+                        </div>
+                        <!-- Submit button -->
+                        <button type="submit" class="btn-primary">Obtener Presupuesto Gratis</button>
+                    </form>
+                </div>
+            </section>
 
-        <section class="workshop-section">
-            <div class="workshop-section__map-area">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.563773033621!2d-4.841549423467468!3d39.92878478453472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3f1c717cef78c9%3A0xe80e353d605fae33!2sI.E.S.%20Ribera%20del%20Tajo!5e0!3m2!1ses!2ses!4v1704203000000!5m2!1ses!2ses" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            <div class="workshop-section__info">
-                <div class="workshop-section__detail">
-                    <h4 class="workshop-section__detail-title"><i class="fa-solid fa-location-dot"></i> Visita nuestro Taller</h4>
-                    <p class="workshop-section__detail-text">Av. Real Fábrica de Sedas s/n<br>Talavera de la Reina 45600, Toledo</p>
+            <!-- REVIEWS SECTION -->
+            <section class="reviews-section">
+                <h3 class="reviews-section__title">Opiniones Recientes</h3>
+                
+                <!-- Single review -->
+                <div class="review-item">
+                    <div class="review-item__stars">★★★★★</div>
+                    <p class="review-item__text">"Trabajo increíble en nuestro camión de tacos. Los colores son vibrantes y la instalación fue muy rápida."</p>
+                    <div class="review-item__user">
+                        <span class="review-item__avatar">TR</span>
+                        <span class="review-item__name"><strong>Tacos El Rey</strong></span>
+                    </div>
                 </div>
-                <div class="workshop-section__detail">
-                    <h4 class="workshop-section__detail-title"><i class="fa-regular fa-clock"></i> Horario de Apertura</h4>
-                    <p class="workshop-section__detail-text">Lun - Vie: 9:00 AM - 6:00 PM<br>Sáb: 10:00 AM - 2:00 PM</p>
+
+                <!-- Another review -->
+                <div class="review-item">
+                    <div class="review-item__stars">★★★★★</div>
+                    <p class="review-item__text">"Equipo muy profesional. Gestionaron el diseño desde cero y el resultado es sencillamente espectacular."</p>
+                    <div class="review-item__user">
+                        <span class="review-item__avatar review-item__avatar--alt">BB</span>
+                        <span class="review-item__name"><strong>Burger Bros</strong></span>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</main>
+            </section>
+
+            <!-- FAQ SECTION -->
+            <section class="faq-section">
+                <h3 class="faq-section__title">Preguntas Frecuentes</h3>
+                <div class="faq-section__item">¿Cuánto cuesta una rotulación completa? <span>▼</span></div>
+                <div class="faq-section__item">¿Ofrecen servicios de diseño? <span>▼</span></div>
+                <div class="faq-section__item">¿Cuánto tiempo dura el vinilo? <span>▼</span></div>
+            </section>
+
+            <!-- WORKSHOP / MAP SECTION -->
+            <section class="workshop-section">
+                <div class="workshop-section__map-area">
+                    <!-- Google Map iframe -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3059.563773033621!2d-4.841549423467468!3d39.92878478453472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3f1c717cef78c9%3A0xe80e353d605fae33!2sI.E.S.%20Ribera%20del%20Tajo!5e0!3m2!1ses!2ses!4v1704203000000!5m2!1ses!2ses" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="workshop-section__info">
+                    <div class="workshop-section__detail">
+                        <h4 class="workshop-section__detail-title"><i class="fa-solid fa-location-dot"></i> Visita nuestro Taller</h4>
+                        <p class="workshop-section__detail-text">Av. Real Fábrica de Sedas s/n<br>Talavera de la Reina 45600, Toledo</p>
+                    </div>
+                    <div class="workshop-section__detail">
+                        <h4 class="workshop-section__detail-title"><i class="fa-regular fa-clock"></i> Horario de Apertura</h4>
+                        <p class="workshop-section__detail-text">Lun - Vie: 9:00 AM - 6:00 PM<br>Sáb: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
     <footer class="footer">
         <div class="container-footer">
             <div class="footer__grid">
+                <!-- Brand / Logo -->
                 <div class="footer__col footer__col--brand">
                     <div class="footer__logo">
                         <a href=""><img src="../assets/images/logo.png" class="image__logo" alt="Wrap&Roll logo"></a>
@@ -155,6 +190,7 @@
                     <p class="footer__description">
                         Ayudando a los food trucks a destacarse entre la multitud desde 2015. Materiales de primera calidad, diseños galardonados.
                     </p>
+                    <!-- Social links -->
                     <div class="footer__socials">
                         <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
@@ -163,6 +199,7 @@
                     </div>
                 </div>
 
+                <!-- Footer services -->
                 <div class="footer__col">
                     <h4 class="footer__title">Servicios</h4>
                     <ul class="footer__list">
@@ -173,6 +210,7 @@
                     </ul>
                 </div>
 
+                <!-- Footer contact info -->
                 <div class="footer__col">
                     <h4 class="footer__title">Contacto</h4>
                     <ul class="footer__contact-info">
@@ -182,6 +220,7 @@
                     </ul>
                 </div>
 
+                <!-- Newsletter -->
                 <div class="footer__col">
                     <h4 class="footer__title">Mantente Informado</h4>
                     <p class="footer__newsletter-text">Suscríbete para consejos dediseño y ofertas exclusivas</p>
@@ -193,6 +232,7 @@
 
             </div>
 
+            <!-- Footer bottom legal -->
             <div class="footer__bottom">
                 <p>© 2024 Wrap&Roll Inc. Todos los derechos reservados.</p>
                 <div class="footer__legal">
@@ -202,6 +242,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- JS Script -->
     <script src="../js/script.js"></script>
 </body>
 </html>
