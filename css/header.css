@@ -102,21 +102,44 @@
 }
 
 .nav__burger {
+    display: none; /* Oculto en desktop */
     background: none;
+    border: none;
     cursor: pointer;
-    display: none; /* Hidden on desktop */
     align-items: center;
     justify-content: center;
 }
 
 .nav__burger i {
+    font-size: 24px;
     color: var(--dark);
-    font-size: 24px; /* Burger icon size */
     transition: 0.3s;
 }
 
-.nav__burger i:hover {
-    color: var(--primary); /* Hover color for burger icon */
+.nav__burger:hover i {
+    color: var(--primary);
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 /* --- MEDIA QUERIES --- */
@@ -132,10 +155,14 @@
 }
 
 @media (max-width: 992px) {
+    .nav__burger {
+        display: flex; /* Aparece en móvil */
+    }
+
     .header__nav {
-        display: none; /* Hide nav initially */
-        position: absolute; 
-        top: 90px; 
+        display: none; /* Menú oculto inicialmente */
+        position: absolute;
+        top: 90px;
         left: 0;
         width: 100%;
         background-color: var(--white);
@@ -143,27 +170,31 @@
         align-items: center;
         gap: 15px;
         padding: 20px 0;
-        z-index: 999; /* On top of other content */
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .header__nav.nav--open {
-        display: flex; /* Show nav when open */
+        display: flex; /* Mantener flex */
+        animation: slideDownFade 0.3s ease forwards;
+    }
+
+    /* Aplicar animación al cerrar usando clase temporal */
+    .header__nav.nav--close {
+        animation: slideUpFade 0.6s ease forwards;
     }
 
     .menu {
-        flex-direction: column; /* Stack menu items */
+        flex-direction: column;
         align-items: center;
         width: 100%;
         gap: 15px;
         padding: 0;
         margin: 0;
-        list-style: none;
     }
 
-    /* Show contact button in mobile menu */
     .menu__item--contact {
-        display: block; 
+        display: block;
         width: 70%;
         max-width: 220px;
         margin: 0 auto;
@@ -173,11 +204,10 @@
         border-radius: 30px;
         font-weight: bold;
         text-align: center;
-        display: inline-block;
     }
 
     .nav__actions .header__button {
-        display: none; /* Hide header button in mobile */
+        display: none; /* Ocultar botón principal en móvil */
     }
 }
 
