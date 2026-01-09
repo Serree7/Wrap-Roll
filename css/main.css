@@ -410,6 +410,88 @@
     color: var(--dark); 
 }
 
+/* ==========================
+   COOKIE BANNER
+========================== */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    width: 300px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: cookie-show 0.5s forwards;
+}
+
+.cookie-banner p {
+    font-size: 0.9rem;
+    color: var(--dark);
+    margin: 0;
+}
+
+.cookie-banner.hide {
+    animation: cookie-hide 0.5s forwards;
+}
+
+.cookie-banner__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cookie-banner button {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cookie-banner button.accept {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.cookie-banner button.accept:hover {
+    background-color: var(--dark);
+}
+
+/* Animación de entrada */
+@keyframes cookie-show {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de salida */
+@keyframes cookie-hide {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+
 @keyframes vibrate {
     0% {
         transform: translateX(0);

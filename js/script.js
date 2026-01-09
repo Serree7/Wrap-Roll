@@ -2,6 +2,8 @@
 const burgerButton = document.getElementById('menu-toggle');
 const navMenu = document.querySelector('.header__nav');
 const navLinks = navMenu.querySelectorAll('a');
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptBtn = document.getElementById('accept-cookies');
 
 // Mostrar menú
 const openMenu = () => {
@@ -37,6 +39,24 @@ const handleLinkClick = () => {
         closeMenu();
     }
 };
+
+// Función para ocultar el banner con animación
+const hideCookieBanner = () => {
+    cookieBanner.classList.add('hide'); // dispara animación de salida
+};
+
+// Función para quitar del DOM después de la animación
+const removeCookieBanner = () => {
+    cookieBanner.style.display = 'none';
+};
+
+// Listener del botón (fuera de las funciones)
+acceptBtn.addEventListener('click', hideCookieBanner);
+
+// Listener para cuando termine la animación de salida
+cookieBanner.addEventListener('animationend', (event) => {
+    if (event.animationName === 'cookie-hide') removeCookieBanner();
+});
 
 
 // Listener del botón hamburguesa
