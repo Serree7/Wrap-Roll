@@ -1,3 +1,7 @@
+/* ----------------------------------------
+   HERO SECTION
+---------------------------------------- */
+/* Hero banner with parallax effect */
 .hero {
     width: 100%;
     height: 550px;
@@ -14,39 +18,42 @@
         url('../assets/images/hero services.jpg'); /* Background image */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* <- Parallax effect */
+    background-attachment: fixed; /* Parallax effect */
     margin-bottom: 60px;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s forwards;
 }
 
+/* Hero container wrapper */
 .hero .container {
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 60px; 
-    /* Container padding for hero */
+    padding: 0 60px;
 }
 
+/* Hero content area */
 .hero-content {
     max-width: 800px; 
     text-align: center;
     margin: 0 auto; 
-    color: var(--white); /* Text color for hero content */
+    color: var(--white);
 }
 
+/* Hero tag/label */
 .hero-tag {
     font-family: var(--font-display);
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--primary); /* Accent color for tag */
+    color: var(--primary);
     margin-bottom: 15px;
     display: block;
 }
 
+/* Hero main heading */
 .hero h1 {
     font-size: clamp(2rem, 5vw, 64px); /* Responsive font: min 2rem, max 64px, scales with viewport */
     font-weight: 800;
@@ -57,16 +64,20 @@
     text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
 }
 
-
-/* --- MAIN LAYOUT --- */
+/* ----------------------------------------
+   MAIN LAYOUT
+---------------------------------------- */
+/* Main container for page layout */
 .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 60px;
-    /* Main container for page layout */
 }
 
-/* --- GRID SYSTEM (BEM: services-grid) --- */
+/* ----------------------------------------
+   SERVICES GRID SYSTEM
+---------------------------------------- */
+/* Grid layout for services section */
 .services-grid {
     display: grid;
     gap: 30px; /* Space between grid items */
@@ -75,10 +86,13 @@
     grid-template-areas: 
         "intro   intro   oferta"
         "marca   marca   oferta"
-        "parcial full    full"; /* Layout for services section */
+        "parcial full    full"; /* Layout areas for different sections */
 }
 
-/* Intro Section */
+/* ----------------------------------------
+   INTRO SECTION
+---------------------------------------- */
+/* Introduction card */
 .services-grid__intro {
     grid-area: intro;
     background: var(--white);
@@ -87,17 +101,22 @@
     /* Shadow for elevation */
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
+
 .services-grid__intro h2 {
     font-size: 32px;
     margin-bottom: 15px;
 }
+
 .services-grid__intro p {
-    color: var(--text-main); /* Main text color */
+    color: var(--text-main);
     line-height: 1.8;
     font-size: 16px;
 }
 
-/* --- PROMO ASIDE (BEM: services-promo) --- */
+/* ----------------------------------------
+   PROMO ASIDE
+---------------------------------------- */
+/* Promotional sidebar card with floating animation */
 .services-promo {
     grid-area: oferta;
     background: linear-gradient(135deg, var(--primary), var(--primary-hover));
@@ -109,11 +128,13 @@
     height: fit-content;
     animation: floating 3s ease-in-out infinite; /* Floating animation */
 }
+
 .services-promo h3 {
     font-size: 26px;
     margin-bottom: 15px;
-    color: var(--white); /* White text on gradient */
+    color: var(--white);
 }
+
 .services-promo p {
     margin-bottom: 20px;
     line-height: 1.6;
@@ -121,6 +142,7 @@
     color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
 }
 
+/* Promo tag/label */
 .services-promo__tag {
     font-size: 11px;
     font-weight: bold;
@@ -130,6 +152,7 @@
     font-family: var(--font-display);
 }
 
+/* Input field wrapper */
 .services-promo__input-wrapper input {
     width: 100%;
     padding: 12px 18px;
@@ -141,6 +164,7 @@
     color: var(--text-main);
 }
 
+/* Promo button */
 .services-promo__btn {
     background: var(--white);
     color: var(--primary);
@@ -154,15 +178,26 @@
     transition: transform 0.3s;
     font-family: var(--font-display);
 }
+
 .services-promo__btn:hover {
     transform: scale(1.05);
 }
 
-/* --- SERVICE CARDS (BEM: service-card) --- */
-.service-card--branding { grid-area: marca; }
-.service-card--partial  { grid-area: parcial; }
-.service-card--full     { grid-area: full; }
+/* ----------------------------------------
+   SERVICE CARDS
+---------------------------------------- */
+/* Grid area assignments for different service cards */
+.service-card--branding { 
+    grid-area: marca; 
+}
+.service-card--partial { 
+    grid-area: parcial; 
+}
+.service-card--full { 
+    grid-area: full; 
+}
 
+/* Base service card styling */
 .service-card {
     background: var(--white);
     border-radius: 20px;
@@ -173,42 +208,51 @@
     flex-direction: column;
 }
 
+/* Card hover effect */
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* Branding card horizontal layout */
 .service-card--branding {
     flex-direction: row;
 }
+
 .service-card--branding .service-card__image {
     width: 50%;
     height: 100%;
     object-fit: cover;
 }
+
 .service-card--branding .service-card__content {
     width: 50%;
 }
 
+/* Card image */
 .service-card__image {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
+
 .service-card--full .service-card__image {
     height: 250px;
 }
 
+/* Card content area */
 .service-card__content {
     padding: 30px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 .service-card__content h2 {
     font-size: 26px;
     margin-bottom: 15px;
 }
+
 .service-card__content p {
     color: var(--text-main);
     line-height: 1.7;
@@ -216,11 +260,13 @@
     font-size: 15px;
 }
 
+/* Features list */
 .service-card__features {
     list-style: none;
     margin-bottom: 25px;
     flex: 1;
 }
+
 .service-card__features li {
     padding: 10px 0;
     display: flex;
@@ -228,6 +274,8 @@
     color: var(--text-main);
     font-size: 14px;
 }
+
+/* Checkmark before each feature */
 .service-card__features li::before {
     content: "✓";
     color: var(--primary);
@@ -236,6 +284,7 @@
     font-size: 18px;
 }
 
+/* Service card button */
 .service-card__btn {
     background: linear-gradient(135deg, var(--primary), var(--primary-hover));
     color: var(--white);
@@ -249,21 +298,27 @@
     align-self: flex-start;
     font-family: var(--font-display);
 }
+
 .service-card__btn:hover {
     transform: scale(1.05);
 }
 
-/* --- PLANS SECTION --- */
+/* ----------------------------------------
+   PLANS SECTION
+---------------------------------------- */
+/* Plans section container */
 .plans-section {
     padding: 80px 60px;
     background-color: var(--gray-light);
     margin-top: 60px;
 }
+
 .plans-section h2 {
     text-align: center;
     font-size: 42px;
     margin-bottom: 15px;
 }
+
 .plans-section > p {
     text-align: center;
     color: var(--text-main);
@@ -271,6 +326,7 @@
     font-size: 18px;
 }
 
+/* Plans grid layout */
 .plans-grid {
     display: flex;
     flex-wrap: wrap;
@@ -280,6 +336,7 @@
     margin: 0 auto;
 }
 
+/* Individual plan card */
 .plan-card {
     background: var(--white);
     border-radius: 20px;
@@ -290,11 +347,13 @@
     border: 3px solid transparent;
     transition: all 0.3s;
 }
+
 .plan-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
+/* Featured/highlighted plan */
 .plan-card--featured {
     border-color: var(--primary);
     transform: scale(1.05);
@@ -305,6 +364,7 @@
     margin-bottom: 20px;
 }
 
+/* Plan price */
 .plan-card__price {
     font-size: 48px;
     font-weight: bold;
@@ -312,16 +372,19 @@
     margin-bottom: 5px;
 }
 
+/* Billing period */
 .plan-card__period {
     color: var(--text-main);
     font-size: 14px;
     margin-bottom: 30px;
 }
 
+/* Plan features list */
 .plan-card__features {
     list-style: none;
     margin-bottom: 30px;
 }
+
 .plan-card__features li {
     padding: 12px 0;
     color: var(--text-main);
@@ -329,6 +392,7 @@
     border-bottom: 1px solid var(--gray-light);
 }
 
+/* Plan selection button */
 .plan-card__btn {
     background: var(--gray-light);
     color: var(--titles);
@@ -342,30 +406,38 @@
     transition: all 0.3s;
     font-family: var(--font-display);
 }
+
 .plan-card__btn:hover {
     background: #e2e8f0;
 }
 
+/* Featured plan button styling */
 .plan-card--featured .plan-card__btn {
     background: linear-gradient(135deg, var(--primary), var(--primary-hover));
     color: var(--white);
 }
+
 .plan-card--featured .plan-card__btn:hover {
     transform: scale(1.02);
 }
 
-/* --- FAQ SECTION --- */
+/* ----------------------------------------
+   FAQ SECTION
+---------------------------------------- */
+/* FAQ section container */
 .faq-section {
     padding: 80px 60px;
     max-width: 1440px;
     margin: 0 auto;
 }
+
 .faq-section h2 {
     font-size: 42px;
     margin-bottom: 50px;
     color: var(--titles); 
 }
 
+/* Individual FAQ item */
 .faq-item {
     background: var(--white);
     border-radius: 15px;
@@ -379,16 +451,21 @@
     transition: all 0.3s;
     color: var(--titles);
 }
+
 .faq-item:hover {
     box-shadow: 0 5px 20px rgba(0,0,0,0.12);
     color: var(--primary);
 }
+
 .faq-item h3 {
     font-size: 18px;
     font-weight: 500;
 }
 
-/* --- ANIMATIONS --- */
+/* ----------------------------------------
+   ANIMATIONS
+---------------------------------------- */
+/* Floating animation for promo card */
 @keyframes floating {
     0% { 
         transform: translateY(0px); 
@@ -401,6 +478,7 @@
     }
 }
 
+/* Fade-in and slide-up animation */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -412,7 +490,10 @@
     }
 }
 
-/* --- MEDIA QUERIES --- */
+/* ----------------------------------------
+   MEDIA QUERIES
+---------------------------------------- */
+/* Large desktops */
 @media (max-width: 1440px) {
     .container {
         padding: 0 40px;
@@ -422,6 +503,7 @@
     }
 }
 
+/* Tablets landscape */
 @media (max-width: 1024px) and (min-width: 769px) {
     .services-grid {
         grid-template-columns: 1fr 1fr;
@@ -441,11 +523,14 @@
     }
 }
 
+/* Tablets and mobile */
 @media (max-width: 768px) {
+    /* Hide promo on mobile */
     .services-promo {
         display: none;
     }
 
+    /* Single column layout */
     .services-grid {
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -456,6 +541,7 @@
         gap: 25px;
     }
 
+    /* Stack branding card vertically */
     .service-card--branding { 
         flex-direction: column;
     }
@@ -465,6 +551,7 @@
     }
 }
 
+/* Small mobile devices */
 @media (max-width: 480px) {
     .container { 
         padding: 0 20px;

@@ -1,4 +1,7 @@
-/* --- LAYOUT --- */
+/* ----------------------------------------
+   MAIN LAYOUT
+---------------------------------------- */
+/* Main wrapper for contact page */
 .main-wrapper {
     width: 100%;
     display: flex;
@@ -7,6 +10,7 @@
     background-color: var(--gray-light); /* Light gray background */
 }
 
+/* Content container with CSS Grid layout */
 .content-container {
     width: 100%;
     max-width: 1440px;
@@ -21,28 +25,37 @@
     animation: fadeInPage 0.8s ease-out; /* Page fade-in animation */
 }
 
-/* Grid areas */
+/* ----------------------------------------
+   GRID AREAS ASSIGNMENT
+---------------------------------------- */
 .hero-section { 
     grid-area: hero; 
     text-align: center; 
 }
+
 .quote-container { 
     grid-area: form; 
 }
+
 .reviews-section { 
     grid-area: reviews; 
     display: flex; 
     flex-direction: column; 
     gap: 20px; 
 }
+
 .faq-section { 
     grid-area: faq; 
 }
+
 .workshop-section { 
     grid-area: map; 
 }
 
-/* --- HERO SECTION --- */
+/* ----------------------------------------
+   HERO SECTION
+---------------------------------------- */
+/* Icon circle at top of hero */
 .hero-section__icon-circle {
     background: #fff;
     color: var(--primary);
@@ -57,6 +70,7 @@
     font-size: 1.5rem;
 }
 
+/* Hero main title */
 .hero-section__title {
     font-family: var(--font-display);
     font-size: 3rem;
@@ -65,12 +79,17 @@
     margin-bottom: 10px;
 }
 
+/* Highlighted text in title */
 .hero-section__title span { 
-    color: var(--primary); /* Highlighted text */
+    color: var(--primary);
 }
+
+/* Hero description text */
 .hero-section__description { 
-    color: var(--text-main); /* Main descriptive text */
+    color: var(--text-main);
 }
+
+/* Contact buttons container */
 .hero-section__contact-buttons { 
     display: flex; 
     justify-content: center; 
@@ -78,7 +97,10 @@
     margin: 30px 0 50px; 
 }
 
-/* Buttons */
+/* ----------------------------------------
+   BUTTONS
+---------------------------------------- */
+/* Outline button style */
 .btn-outline {
     background: var(--white);
     color: var(--dark);
@@ -92,6 +114,7 @@
     transition: all 0.3s ease;
 }
 
+/* Button hover effect */
 .btn-outline:hover {
     border-color: var(--primary);
     color: var(--primary);
@@ -99,13 +122,17 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
+/* Icon inside button */
 .btn-outline i {
     color: var(--primary);
     padding-right: 12px; 
     font-size: 1.2rem;
 }
 
-/* --- STEPS / PROCESS --- */
+/* ----------------------------------------
+   PROCESS STEPS
+---------------------------------------- */
+/* Steps container */
 .hero-section__steps {
     display: flex;
     background: #FCFBFB;
@@ -115,6 +142,7 @@
     box-shadow: 0 2px 15px rgba(0,0,0,0.03);
 }
 
+/* Individual step item */
 .step-item { 
     font-weight: 700; 
     font-size: 0.9rem; 
@@ -125,6 +153,7 @@
     align-items: center;
 }
 
+/* Step icon */
 .step-item i {
     background-color: var(--white);
     color: var(--primary);
@@ -136,7 +165,10 @@
     border-radius: 50%;
 }
 
-/* --- FORM CARD --- */
+/* ----------------------------------------
+   QUOTE FORM
+---------------------------------------- */
+/* Form card container */
 .quote-card {
     background: var(--white);
     padding: 40px;
@@ -144,19 +176,23 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.02); /* Light card shadow */
 }
 
+/* Form title */
 .quote-card__title { 
     margin-bottom: 30px; 
     color: var(--titles); 
     font-family: var(--font-display); 
 }
+
 .quote-card__title i { 
     color: var(--primary); 
 }
 
-/* Form groups */
+/* Form group wrapper */
 .form-group { 
     margin-bottom: 20px; 
 }
+
+/* Form label */
 .form-group__label {
     display: block;
     font-size: 0.7rem;
@@ -165,6 +201,7 @@
     color: #64748b;
 }
 
+/* Form inputs, select, and textarea */
 .form-group__input, 
 .form-group__select, 
 .form-group__textarea {
@@ -177,6 +214,7 @@
     transition: all 0.3s ease;
 }
 
+/* Input focus state */
 .form-group__input:focus, 
 .form-group__textarea:focus {
     border-color: var(--primary);
@@ -198,17 +236,22 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Button hover effect with lift and shadow */
 .btn-primary:hover {
     background: var(--primary-hover);
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(236, 127, 19, 0.3);
 }
 
+/* Button active/pressed state */
 .btn-primary:active {
     transform: translateY(-1px);
 }
 
-/* --- REVIEWS --- */
+/* ----------------------------------------
+   REVIEWS SECTION
+---------------------------------------- */
+/* Section titles */
 .reviews-section__title, 
 .faq-section__title {
     font-family: var(--font-display); 
@@ -216,6 +259,7 @@
     color: var(--titles); 
 }
 
+/* Individual review card */
 .review-item {
     background: var(--white);
     border-radius: 20px;
@@ -224,22 +268,28 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.02);
 }
 
+/* Review card hover effect */
 .review-item:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 30px rgba(0,0,0,0.05);
 }
 
+/* Star rating */
 .review-item__stars { 
     color: var(--primary); 
     margin-bottom: 12px; 
     font-size: 0.9rem; 
 }
+
+/* User info container */
 .review-item__user { 
     display: flex; 
     align-items: center; 
     gap: 10px; 
     margin-top: 15px; 
 }
+
+/* User avatar */
 .review-item__avatar {
     width: 35px; 
     height: 35px;
@@ -252,12 +302,17 @@
     font-size: 0.7rem; 
     font-weight: 700;
 }
+
+/* Alternative avatar color */
 .review-item__avatar--alt { 
     background: #e2e8f0; 
     color: #64748b; 
 }
 
-/* --- FAQ --- */
+/* ----------------------------------------
+   FAQ SECTION
+---------------------------------------- */
+/* Individual FAQ item */
 .faq-section__item {
     background: var(--white);
     padding: 20px;
@@ -270,11 +325,15 @@
     transition: all 0.3s ease;
 }
 
+/* FAQ item hover effect */
 .faq-section__item:hover { 
     box-shadow: 0 5px 20px rgba(0,0,0,0.12); 
 }
 
-/* --- WORKSHOP / MAP --- */
+/* ----------------------------------------
+   WORKSHOP / MAP SECTION
+---------------------------------------- */
+/* Workshop section container */
 .workshop-section {
     background: var(--white);
     border-radius: 20px;
@@ -283,25 +342,34 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
+/* Map area container */
 .workshop-section__map-area { 
     height: 400px; 
     width: 100%; 
     background: #e2e8f0; 
 }
+
+/* Map iframe */
 .workshop-section__map-area iframe { 
     width: 100%; 
     height: 100%; 
     border: none; 
     display: block; 
 }
+
+/* Workshop info container */
 .workshop-section__info { 
     display: flex; 
     padding: 40px; 
     gap: 80px; 
 }
+
+/* Individual detail section */
 .workshop-section__detail { 
     flex: 1; 
 }
+
+/* Detail title */
 .workshop-section__detail-title { 
     margin-bottom: 12px; 
     font-family: var(--font-display); 
@@ -310,15 +378,22 @@
     align-items: center; 
     gap: 10px;
 }
+
+/* Icon in detail title */
 .workshop-section__detail-title i { 
     color: var(--primary); 
 }
+
+/* Detail text */
 .workshop-section__detail-text { 
     color: var(--text-main); 
     line-height: 1.5; 
 }
 
-/* --- MEDIA QUERIES --- */
+/* ----------------------------------------
+   MEDIA QUERIES
+---------------------------------------- */
+/* Large desktops */
 @media (max-width: 1440px) {
     .content-container {
         grid-template-columns: 1fr 1fr 300px; 
@@ -330,6 +405,7 @@
     }
 }
 
+/* Tablets landscape */
 @media (max-width: 1024px) and (min-width: 769px) {
     .content-container {
         grid-template-columns: 1fr 1fr;
@@ -339,15 +415,20 @@
         "faq reviews" 
         "map map";
     }
+    
+    /* Center reviews on tablet */
     .reviews-section { 
         text-align: center; 
     }
+    
     .review-item__user { 
         justify-content: center; 
     }
 }
 
+/* Tablets and mobile */
 @media (max-width: 768px) {
+    /* Single column layout */
     .content-container {
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -356,33 +437,44 @@
         "faq" 
         "map";
     }
+    
+    /* Hide reviews on mobile */
     .reviews-section { 
-        display: none; /* Hide reviews on mobile */
+        display: none;
     }
+    
+    /* Stack steps vertically */
     .hero-section__steps { 
         flex-direction: column;
         border-radius: 20px; 
     }
+    
+    /* Stack workshop info */
     .workshop-section__info { 
         flex-direction: column; 
     }
 
+    /* Stack contact buttons */
     .hero-section__contact-buttons {
         flex-direction: column;
         align-items: center;
     }
 }
 
+/* Small mobile devices */
 @media (max-width: 480px) {
+    /* Smaller hero title */
     .hero-section__title { 
-        font-size: 32px; /* Smaller hero title */
+        font-size: 32px;
     }
 
+    /* Full width buttons */
     .btn-outline {
         width: 100%;
         justify-content: center;
     }
 
+    /* Adjust hero height */
     .hero-section { 
         min-height: 350px; 
         display: flex; 

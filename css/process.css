@@ -1,3 +1,7 @@
+/* ----------------------------------------
+   MAIN WRAPPER
+---------------------------------------- */
+/* Main wrapper for process section */
 .process-wrapper {
     width: 100%;
     background-color: var(--gray-light); /* Light gray background */
@@ -6,18 +10,23 @@
     justify-content: center; /* Center container horizontally */
 }
 
+/* Container with max width */
 .process-container {
     width: 100%;
     max-width: 1440px; /* Limit container width */
     padding: 0 40px; /* Horizontal padding */
 }
 
-/* --- HERO SECTION --- */
+/* ----------------------------------------
+   HERO SECTION
+---------------------------------------- */
+/* Hero section styling */
 .process-hero {
     text-align: center; /* Center text */
     margin-bottom: 100px; /* Space below hero */
 }
 
+/* Badge/tag above title */
 .process-hero__badge {
     background: #fff1e6; /* Light orange background */
     color: var(--primary); /* Primary text color */
@@ -31,6 +40,7 @@
     margin-bottom: 25px;
 }
 
+/* Main hero title */
 .process-hero__title {
     font-family: var(--font-display); /* Display font */
     font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font */
@@ -39,10 +49,12 @@
     margin-bottom: 20px;
 }
 
+/* Highlighted text in title */
 .process-hero__title span { 
     color: var(--primary); /* Highlight span in primary color */
 }
 
+/* Hero description text */
 .process-hero__description {
     max-width: 700px; /* Limit width */
     margin: 0 auto;
@@ -52,13 +64,17 @@
     line-height: 1.7; /* Readable line spacing */
 }
 
-/* --- TIMELINE --- */
+/* ----------------------------------------
+   TIMELINE
+---------------------------------------- */
+/* Timeline container */
 .process-timeline {
     position: relative;
     max-width: 1100px;
     margin: 0 auto 120px; /* Center timeline and bottom margin */
 }
 
+/* Vertical timeline bar */
 .process-timeline__bar {
     position: absolute;
     left: 50%; /* Center vertical bar */
@@ -68,6 +84,7 @@
     background: #fed7aa; /* Soft orange line */
 }
 
+/* Individual timeline step */
 .process-timeline__step {
     display: flex;
     align-items: center;
@@ -75,6 +92,7 @@
     margin-bottom: 80px; /* Space between steps */
 }
 
+/* Timeline step icon */
 .process-timeline__icon {
     width: 65px;
     height: 65px;
@@ -90,26 +108,31 @@
     box-shadow: 0 10px 20px rgba(236, 127, 19, 0.1);
 }
 
+/* Text content for timeline step */
 .process-timeline__text {
     width: 45%;
     padding: 0 40px; /* Space around text */
 }
 
-/* Modifiers for left/right positioning */
+/* Modifiers for alternating left/right positioning */
 .process-timeline__step--left { 
     justify-content: flex-end; 
 }
+
 .process-timeline__step--right { 
     justify-content: flex-start; 
 }
 
+/* Text alignment for left/right steps */
 .process-timeline__step--left .process-timeline__text { 
     text-align: right; 
 }
+
 .process-timeline__step--right .process-timeline__text { 
     text-align: left; 
 }
 
+/* Step title */
 .process-timeline__step-title {
     font-family: var(--font-display);
     font-size: 1.5rem;
@@ -117,13 +140,17 @@
     margin-bottom: 12px;
 }
 
+/* Step description */
 .process-timeline__step-description { 
     font-family: var(--font-body);
     color: var(--text-main);
     line-height: 1.6; /* Readable line height */
 }
 
-/* --- CTA SECTION --- */
+/* ----------------------------------------
+   CTA SECTION
+---------------------------------------- */
+/* Call-to-action section */
 .process-cta {
     background-color: var(--primary); /* Primary background */
     background-image: radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent); /* Subtle radial effect */
@@ -133,6 +160,7 @@
     color: var(--white);
 }
 
+/* CTA title */
 .process-cta__title {
     font-family: var(--font-display);
     font-size: 2.8rem;
@@ -140,6 +168,7 @@
     margin-bottom: 20px;
 }
 
+/* CTA description */
 .process-cta__description { 
     font-family: var(--font-body);
     font-size: 1.2rem; 
@@ -147,6 +176,7 @@
     opacity: 0.95; /* Slight transparency for subtle effect */
 }
 
+/* CTA button */
 .process-cta__button {
     background: var(--white);
     color: var(--primary);
@@ -162,12 +192,16 @@
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Button hover effect */
 .process-cta__button:hover { 
     transform: translateY(-5px); /* Lift on hover */
     background-color: var(--gray-light);
 }
 
-/* --- ANIMATIONS PARA TIMELINE --- */
+/* ----------------------------------------
+   TIMELINE ANIMATIONS
+---------------------------------------- */
+/* Fade in from right animation */
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
@@ -179,6 +213,7 @@
     }
 }
 
+/* Fade in from left animation */
 @keyframes fadeInRight {
     0% {
         opacity: 0;
@@ -190,18 +225,19 @@
     }
 }
 
-/* Apply animation to timeline steps */
+/* Apply animations to left-aligned steps */
 .process-timeline__step--left {
     opacity: 0;
     animation: fadeInLeft 1s forwards;
 }
 
+/* Apply animations to right-aligned steps */
 .process-timeline__step--right {
     opacity: 0;
     animation: fadeInRight 1s forwards;
 }
 
-/* Add staggered delays based on position */
+/* Staggered animation delays for sequential appearance */
 .process-timeline__step--left:nth-child(odd) {
     animation-delay: 0.2s;
 }
@@ -226,7 +262,10 @@
     animation-delay: 1.2s;
 }
 
-/* --- RESPONSIVE --- */
+/* ----------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------- */
+/* Tablets and smaller desktops */
 @media (max-width: 1024px) {
     .process-hero__title { 
         font-size: 3rem; /* Smaller on tablet */
@@ -243,6 +282,7 @@
     }
 }
 
+/* Mobile tablets */
 @media (max-width: 768px) {
     .process-wrapper { 
         padding: 60px 0; 
@@ -250,17 +290,21 @@
     .process-hero { 
         margin-bottom: 60px; 
     }
+    
+    /* Move timeline bar to left side */
     .process-timeline__bar { 
         left: 30px; 
         transform: none; /* Adjust bar for mobile */
     }
 
+    /* Stack timeline steps vertically */
     .process-timeline__step {
         justify-content: flex-start;
         margin-bottom: 50px;
         position: relative;
     }
 
+    /* Full width text for mobile */
     .process-timeline__step--left .process-timeline__text,
     .process-timeline__step--right .process-timeline__text {
         width: 100%; /* Full width text */
@@ -269,6 +313,7 @@
         padding-right: 0;
     }
 
+    /* Position icon on left */
     .process-timeline__icon {
         position: absolute; 
         left: 0;
@@ -282,6 +327,7 @@
     }
 }
 
+/* Small mobile devices */
 @media (max-width: 480px) {
     .process-container { 
         padding: 0 20px; 
@@ -292,20 +338,28 @@
     .process-hero__description { 
         font-size: 1rem; 
     }
+    
+    /* Adjust timeline bar position */
     .process-timeline__bar { 
         left: 20px; 
     }
+    
     .process-timeline__text { 
         padding-left: 60px; 
     }
+    
+    /* Smaller icon for mobile */
     .process-timeline__icon { 
         width: 45px; 
         height: 45px; 
         font-size: 1rem; 
     }
+    
     .process-timeline__step-title { 
         font-size: 1.2rem; 
     }
+    
+    /* Adjust CTA for mobile */
     .process-cta { 
         border-radius: 25px; 
         padding: 40px 20px; 
@@ -313,6 +367,8 @@
     .process-cta__title { 
         font-size: 1.8rem; 
     }
+    
+    /* Full width button on mobile */
     .process-cta__button { 
         width: 100%; 
         justify-content: center; 
